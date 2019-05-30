@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <limits.h>
 
 typedef unsigned char *byte_pointer;
 
@@ -10,25 +11,41 @@ static void show_bytes(byte_pointer num, size_t xLen)
     printf("\n");
 }
 
+void show_short(short x)
+{
+    show_bytes((byte_pointer)&x, sizeof(short));
+}
+
 void show_int(int x)
 {
-    show_bytes(&x, sizeof(int));
+    show_bytes((byte_pointer)&x, sizeof(int));
+}
+
+void show_long(long x)
+{
+    show_bytes((byte_pointer)&x, sizeof(long));
 }
 
 void show_float(float x)
 {
-    show_bytes(&x, sizeof(float));
+    show_bytes((byte_pointer)&x, sizeof(float));
 }
 
 void show_double(double x)
 {
-    show_double(&x, sizeof(double));
+    show_bytes((byte_pointer)&x, sizeof(double));
 }
 
 int main(int argc, char **argv)
 {
+    int nShort = 0x1234;
+    show_short(nShort);
+
     int nInt = 0x1234;
     show_int(nInt);
+
+    long nLong = 0x1234;
+    show_long(nLong);
 
     float nFloat = 1.0 * 1234;
     show_float(nFloat);
