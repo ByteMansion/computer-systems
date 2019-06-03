@@ -38,19 +38,19 @@ void show_double(double x)
 
 int main(int argc, char **argv)
 {
-    int nShort = 0x1234;
+    int nShort = 1234;
     show_short(nShort);
 
-    int nInt = 0x1234;
+    int nInt = 12345;
     show_int(nInt);
 
-    long nLong = 0x1234;
+    long nLong = 123467;
     show_long(nLong);
 
-    float nFloat = 1.0 * 1234;
+    float nFloat = 12345.0;
     show_float(nFloat);
 
-    double nDouble = 10.0 * 1234;
+    double nDouble = 1234567.0;
     show_double(nDouble);
 
     return 0;

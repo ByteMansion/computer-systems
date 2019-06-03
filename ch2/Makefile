@@ -2,8 +2,11 @@
 CC = gcc
 CFLAGS = -Wall -g
 
-exe: show-bytes.c
+showBytes.exe: show-bytes.c
+	${CC} ${CFLAGS} $? -o $@
+
+isLittleEndian.exe: is-little-endian.c
 	${CC} ${CFLAGS} $? -o $@
 
 clean:
-	-rm -f core core* *.o *exe
+	-rm -f -r core core* *.o *exe exe* *dSYM
