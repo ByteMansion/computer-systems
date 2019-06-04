@@ -8,5 +8,8 @@ showBytes.exe: show-bytes.c
 isLittleEndian.exe: is-little-endian.c
 	${CC} ${CFLAGS} $? -o $@
 
+replaceByte.exe: replace-byte.c
+	${CC} ${CFLAGS} $? -o $@
+
 clean:
 	-rm -f -r core core* *.o *exe exe* *dSYM
