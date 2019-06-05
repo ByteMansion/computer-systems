@@ -2,13 +2,13 @@
 CC = gcc
 CFLAGS = -Wall -g
 
+replaceByte.exe: replace-byte.c
+	${CC} ${CFLAGS} $? -o $@
+
 showBytes.exe: show-bytes.c
 	${CC} ${CFLAGS} $? -o $@
 
 isLittleEndian.exe: is-little-endian.c
-	${CC} ${CFLAGS} $? -o $@
-
-replaceByte.exe: replace-byte.c
 	${CC} ${CFLAGS} $? -o $@
 
 clean:

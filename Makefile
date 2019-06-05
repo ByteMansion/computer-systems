@@ -7,10 +7,10 @@ SUBDIR3 = ./ch3/
 subsystem2:
 	cd ${SUBDIR2} && ${MAKE}
 
-subsystem3:
-	cd ${SUBDIR3} && ${MAKE}
+#subsystem3:
+#	cd ${SUBDIR3} && ${MAKE}
 
 clean:
 	-rm -f *.exe
 	cd ${SUBDIR2} && ${MAKECLEAN}
-	cd ${SUBDIR3} && ${MAKECLEAN}
+#	cd ${SUBDIR3} && ${MAKECLEAN}

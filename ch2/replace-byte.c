@@ -15,9 +15,8 @@ unsigned replace_byte(unsigned x, unsigned char b, int i)
         i = limit - abs(i) % limit;
     }
 
-    unsigned xl = x<<((limit-i)<<3);
-    unsigned xh = x>>((i+1)<<3);
-    return (b<<(i<<3))|(xh<<((i+1)<<3))|(xl>>((limit-i)<<3));
+    unsigned or = 0xff << (i * 8);
+    return ((x & or) ^ x) | (b << (i * 8));
 }
 void show_bytes(unsigned char *nums)
 {
@@ -30,9 +29,12 @@ void show_bytes(unsigned char *nums)
 int main(int argc, char** argv)
 {
     unsigned x = 0x12345678;
-    unsigned char b = 0xAB;
-    x = replace_byte(x, b, 2);
-    show_bytes((unsigned char*)&x);
+    unsigned result;
+
+    for(int i = -10; i < 10; ++i) {
+        result = replace_byte(x, 0xab, i);
+        show_bytes((unsigned char*)&result);
+    }
 
     return 0;
 }
