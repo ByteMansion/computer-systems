@@ -1,5 +1,5 @@
 /**
- * @brief   CS2.60
+ * @brief   CS 2.60
  *  replace ith byte in para x with para b
  *
  */

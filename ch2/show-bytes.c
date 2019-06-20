@@ -1,3 +1,8 @@
+/**
+ * @brief CS 2.55, 2.56
+ *  Little endian and big endian
+ *
+ */
 #include <stdio.h>
 #include <limits.h>
 

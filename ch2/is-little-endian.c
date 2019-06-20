@@ -1,5 +1,5 @@
 /**
- * @brief   CS2.58
+ * @brief   CS 2.58
  *  get if the process is little endian
  * 
  * @return

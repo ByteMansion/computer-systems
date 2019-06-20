@@ -1,5 +1,5 @@
 /**
- * @brief   CS2.62
+ * @brief   CS 2.62
  *  the key to this problem is to convert signed integer to unsigned.
  *
  * @return
