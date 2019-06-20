@@ -1,26 +1,33 @@
 /**
- * @brief   CS 2.60
+ * @file    replace-byte.c
+ *
+ * @brief   2.60
  *  replace ith byte in para x with para b
+ *
+ *  x: unsigned integer
+ *  b: unsigned char
  *
  */
 #include <stdio.h>
 #include <stdlib.h>
 
+#define UINTLEN sizeof(unsigned)
+
 unsigned replace_byte(unsigned x, unsigned char b, int i)
 {
-    int limit = sizeof(unsigned);
     if(i >= 0) {
-        i %= limit;
+        i %= UINTLEN;
     } else {
-        i = limit - abs(i) % limit;
+        i = UINTLEN - abs(i) % UINTLEN;
     }
 
-    unsigned or = 0xff << (i * 8);
-    return ((x & or) ^ x) | (b << (i * 8));
+    size_t offset = i << 3;
+    unsigned mask = 0xff << offset;
+    return (((x & mask) ^ x) | (b << offset));
 }
 void show_bytes(unsigned char *nums)
 {
-    for(size_t i = 0; i < sizeof(unsigned); ++i) {
+    for(size_t i = 0; i < UINTLEN; ++i) {
         printf("%.2x", nums[i]);
     }
     printf("\n");
@@ -33,6 +40,7 @@ int main(int argc, char** argv)
 
     for(int i = -10; i < 10; ++i) {
         result = replace_byte(x, 0xab, i);
+
         show_bytes((unsigned char*)&result);
     }
 

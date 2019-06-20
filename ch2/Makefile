@@ -11,5 +11,8 @@ showBytes.exe: show-bytes.c
 isLittleEndian.exe: is-little-endian.c
 	${CC} ${CFLAGS} $? -o $@
 
+intShiftsAreArithmetic.exe: int-shifts-are-arithmetic.c
+	${CC} ${CFLAGS} $? -o $@
+
 clean:
 	-rm -f -r core core* *.o *exe exe* *dSYM

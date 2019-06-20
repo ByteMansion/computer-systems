@@ -1,46 +1,35 @@
 /**
- * @brief   CS 2.58
+ * @file    is-little-endian.c
+ *
+ * @brief   2.58
  *  get if the process is little endian
- * 
+ *
  * @return
  *  1: the process is little endian
  *  0: the process is big endian
  *
- * @note
- *  if the number is 0 or 0.0, we cannot know whether
- *  the process is little endian or big endian.
  */
 #include <stdio.h>
 
+#define sizeof(int) INTLEN
+
 typedef unsigned char *byte_pointer;
 
-int is_little_endian(byte_pointer nums,
-                     byte_pointer pNums,
-                     size_t len)
+int is_little_endian(void)
 {
-    // low bits locate in low address
-    for(size_t i = 0; i < len; ++i) {
-        // if the byte number sequence is same as pointer number
-        // sequence, return false
-        if(nums[i] != pNums[i]) {
-            return 0;
-        }
+    // little endian: low bits saved in low address
+    int test_num = 0xFF;
+    byte_pointer pNum = (byte_pointer)&test_num;
+    if(pNum[0] == 0xFF) {
+      return 1;
     }
 
-    return 1;
+    return 0;
 }
-static void int_is_little_endian_init(int x, byte_pointer nums)
-{
-    for(size_t i = 0; i < sizeof(int); ++i) {
-        nums[i] = (x>>(i * 8)) & 0xFF;
-    }
-}
+
 int main(int argc, char **argv)
 {
-    int x = 1234;
-    unsigned char nums[sizeof(int)];
-    int_is_little_endian_init(x,nums);
-    if(is_little_endian(nums, (byte_pointer)&x, sizeof(int))) {
+    if(is_little_endian()) {
         printf("Little endian!\n");
     } else {
         printf("Big endian!\n");

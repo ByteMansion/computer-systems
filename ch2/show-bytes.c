@@ -1,6 +1,7 @@
 /**
- * @brief CS 2.55, 2.56
- *  Little endian and big endian
+ * @file  show-bytes.c
+ *
+ * @brief 2.55, 2.56, 2.57
  *
  */
 #include <stdio.h>

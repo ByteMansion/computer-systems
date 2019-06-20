@@ -11,15 +11,19 @@
  */
 #include <stdio.h>
 
-int int_shifts_are_arithmetic(int num)
+int int_shifts_are_arithmetic(void)
 {
-
+    int num = -1;
+    return !(num ^ (num >> 1));  // if arithmetic shift, xor gets 0
 }
 
 int main(int argc, char **argv)
 {
-    int num;
-    
+    if(int_shifts_are_arithmetic()) {
+        printf("Arithmetic shift!\n");
+    } else {
+        printf("Logical shift!\n");
+    }
 
     return 0;
 }
