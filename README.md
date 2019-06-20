@@ -1,8 +1,8 @@
 # Computer Systems - A Programmer's Perspective
 
 ## Why this repo?
-- Solutions to Homework Problems of the classic cs book - Computer Systems: a programmer's perspective.
-- Document some important points
+- List solutions to Homework Problems of the classic cs book - Computer Systems: a programmer's perspective.
+- Document some important points.
 
 ## Catagory
 

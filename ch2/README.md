@@ -34,4 +34,7 @@ x ^= ((x >> b_cnt) << b_cnt)
 ```
 
 ## 2.62
-[int-shifts-are-arithmetic.c](int-shifts-are-arithmetic.c)
+[int-shifts-are-arithmetic.c](./int-shifts-are-arithmetic.c)
+
+## 2.63
+[srl-and-sra.c](./srl-and-sra.c)

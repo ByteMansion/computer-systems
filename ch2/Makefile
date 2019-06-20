@@ -14,5 +14,8 @@ isLittleEndian.exe: is-little-endian.c
 intShiftsAreArithmetic.exe: int-shifts-are-arithmetic.c
 	${CC} ${CFLAGS} $? -o $@
 
+srl-and-sra.exe: srl-and-sra.c
+	${CC} ${CFLAGS} $? -o $@
+
 clean:
 	-rm -f -r core core* *.o *exe exe* *dSYM
