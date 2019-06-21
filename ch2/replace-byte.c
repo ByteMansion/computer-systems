@@ -27,7 +27,7 @@ unsigned replace_byte(unsigned x, unsigned char b, int i)
 }
 void show_bytes(unsigned char *nums)
 {
-    for(size_t i = 0; i < UINTLEN; ++i) {
+    for(int i = 0; i < UINTLEN; ++i) {
         printf("%.2x", nums[i]);
     }
     printf("\n");
