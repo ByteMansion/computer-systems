@@ -104,7 +104,7 @@ B. & C.
 [rotate-left.c](./rotate-left.c)
 
 ## 2.70
-
+[fits-bits.c](./fits-bits.c)
 
 
 

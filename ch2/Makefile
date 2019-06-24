@@ -35,6 +35,10 @@ lowerOneMask.exe: lower-one-mask.c
 rotateLeft.exe: rotate-left.c
 	${CC} ${CFLAGS} $? -o $@
 
+fitsBits.exe: fits-bits.c
+	${CC} ${CFLAGS} $? -o $@
+
+
 
 
 clean:
