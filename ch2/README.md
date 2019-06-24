@@ -97,4 +97,5 @@ B. & C.
 
 [int-size-is-32.c](./int-size-is-32.c)
 
-
+## 2.68
+[lower-one-mask.c](./lower-one-mask.c)

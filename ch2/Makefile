@@ -29,6 +29,9 @@ leftmostOne.exe: leftmost-one.c
 intSizeIs32.exe: int-size-is-32.c
 	${CC} ${CFLAGS} $? -o $@
 
+lowerOneMask.exe: lower-one-mask.c
+	${CC} ${CFLAGS} $? -o $@
+
 
 clean:
 	-rm -f -r core core* *.o *exe exe* *dSYM
