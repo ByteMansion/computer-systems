@@ -23,5 +23,8 @@ anyOddOne.exe: any-odd-one.c
 oddOnes.exe: odd-ones.c
 	${CC} ${CFLAGS} $? -o $@
 
+leftmost-one.exe: leftmost-one.c
+	${CC} ${CFLAGS} $? -o $@
+
 clean:
 	-rm -f -r core core* *.o *exe exe* *dSYM

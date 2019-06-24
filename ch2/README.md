@@ -44,28 +44,47 @@ x ^= ((x >> b_cnt) << b_cnt)
 
 ## 2.65
 [odd-ones.c](./odd-ones.c)
+
 This solution is very tricky.
-If we only have 4 bits number, it is easy to get a number with odd number of 1s.
+
+**On one side:**
+If we only have 4 bits, it is easy to get a odd number of 1s.
 They are as follows: 
+
 0001(0x1), 0010(0x2), 0100(0x4), 1000(0x8), 0111(0x7), 1011(0xB), 1101(0xD), 1110(0xE).
-So we can create an table to save those cases.
-`0x6996(0110 1001 1001 0110)` means if the ith bit value is 1, i has odd number of 1s.(i = 0,1,2,...)
+
+Therefore, we can create an table to save those cases.
+
+`0x6996(0110 1001 1001 0110)` means if the `i`th bit value is 1, `i` has odd number of 1s.(i = 0,1,2,...)
 
 If 32 bits can decrease to 4 bits, the problem can be solved.
+
+**On the other side:**
+
 One key point is we don't care about any even number of 1s, but only care about the minimum odd number of 1s.
 
 Just think about below fomula, 
 ```c
-x ^= x>>16
-```
-x is unsigned integer.
+x ^= x >> 16  // x is unsigned integer with 32 bits
 
-The low 16 bits is `a`, high 16 bits is `b`. `x = a ^ b` will set the same bit position as 0 if they are all 1.
+```
+The low 16 bits is `a`, high 16 bits is `b`. `x = a ^ b` will set the bit position as 0 if they are all 1.
 Now, we get a integer in which bit value 1 denotes `a` and `b` have an defferent bit value in that position.
 If the number of 1s is odd, all 1s in original `x` is odd.
 
-The same algorithm is to right shift 8 bits, 4bits.
-
+The algorithm is same to 16 bits, 8 bits, and 4 bits integers.
 
 ## 2.66
+Generate mask indicating leftmost 1 in x. x is an unsigned integer.
+
+**Hint** First tansform x into a bit vector of the form [0 ... 01 ... 1].
+
+[leftmost-one.c](./leftmost-one.c)
+
+This is also a tricky solution.
+
+First of all, you have to know the meaning of `Hint`. If so, solution maybe rise.
+
+Compared with previous solution, right shift here is to set right position of leftmost 1 as 1 no matter what value it was.
+
 
