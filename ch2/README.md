@@ -99,3 +99,13 @@ B. & C.
 
 ## 2.68
 [lower-one-mask.c](./lower-one-mask.c)
+
+## 2.69
+[rotate-left.c](./rotate-left.c)
+
+## 2.70
+
+
+
+
+
