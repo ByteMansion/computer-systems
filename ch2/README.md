@@ -87,4 +87,14 @@ First of all, you have to know the meaning of `Hint`. If so, solution maybe rise
 
 Compared with previous solution, right shift here is to set right position of leftmost 1 as 1 no matter what value it was.
 
+## 2.67
+A.
+
+In section 6.5.7 Bitwise shift operators of c11 stardard, it said
+- If the value of the right operand is negative or is greater than or equal to the width of the promoted left operand, the behavior is undefined.
+
+B. & C.
+
+[int-size-is-32.c](./int-size-is-32.c)
+
 

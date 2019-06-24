@@ -1,6 +1,6 @@
 # Define Macros here
 CC = gcc
-CFLAGS = -Wall -g -std=c99
+CFLAGS = -Wall -g -std=c11
 
 replaceByte.exe: replace-byte.c
 	${CC} ${CFLAGS} $? -o $@
@@ -23,8 +23,12 @@ anyOddOne.exe: any-odd-one.c
 oddOnes.exe: odd-ones.c
 	${CC} ${CFLAGS} $? -o $@
 
-leftmost-one.exe: leftmost-one.c
+leftmostOne.exe: leftmost-one.c
 	${CC} ${CFLAGS} $? -o $@
+
+intSizeIs32.exe: int-size-is-32.c
+	${CC} ${CFLAGS} $? -o $@
+
 
 clean:
 	-rm -f -r core core* *.o *exe exe* *dSYM
