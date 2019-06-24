@@ -38,6 +38,10 @@ rotateLeft.exe: rotate-left.c
 fitsBits.exe: fits-bits.c
 	${CC} ${CFLAGS} $? -o $@
 
+xbyte.exe: xbyte.c
+	${CC} ${CFLAGS} $? -o $@
+
+
 
 
 

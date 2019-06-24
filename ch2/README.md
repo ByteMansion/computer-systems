@@ -106,6 +106,12 @@ B. & C.
 ## 2.70
 [fits-bits.c](./fits-bits.c)
 
+## 2.71
+A.
 
+The code cannot signed extend to 32-bits integer.
 
+B.
+
+[xbyte.c](./xbyte.c)
 
