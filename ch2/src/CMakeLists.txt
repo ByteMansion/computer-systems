@@ -1,5 +1,5 @@
 
-add_solution(cs-any-odd-one                 any-odd-one.c)
+# add_solution(cs-any-odd-one                 any-odd-one.c)
   #fits-bits                   fits-bits.c
   #          int-shifts-are-arithmetic   int-shifts-are-arithmetic.c
   #          int-size-is-32              int-size-is-32.c
@@ -13,3 +13,5 @@ add_solution(cs-any-odd-one                 any-odd-one.c)
   #          srl-and-sra                 srl-and-sra.c
   #          xbyte                       xbyte.c)
 
+
+add_solution(cs-copy-int copy-int.c)

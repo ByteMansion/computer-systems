@@ -115,3 +115,11 @@ B.
 
 [xbyte.c](./src/xbyte.c)
 
+## 2.72
+A.
+
+The result of (maxbytes-sizeof(val)) is always unsigned integer cuz the return value of sizeof(val) is unsigned long.
+
+B.
+
+[copy-int.c](./src/copy-int.c)
