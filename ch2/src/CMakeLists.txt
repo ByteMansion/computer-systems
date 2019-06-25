@@ -1,17 +1,15 @@
-
-# add_solution(cs-any-odd-one                 any-odd-one.c)
-  #fits-bits                   fits-bits.c
-  #          int-shifts-are-arithmetic   int-shifts-are-arithmetic.c
-  #          int-size-is-32              int-size-is-32.c
-  #          is-little-endian            is-little-endian.c
-  #          leftmost-one                leftmost-one.c
-  #          lower-one-mask              lower-one-mask.c
-  #          odd-ones                    odd-ones.c
-  #          replace-byte                replace-byte.c
-  #          rotate-left                 rotate-left.c
-  #          show-bytes                  show-bytes.c
-  #          srl-and-sra                 srl-and-sra.c
-  #          xbyte                       xbyte.c)
-
-
+add_solution(cs-any-odd-one any-odd-one.c)
+add_solution(fits-bits fits-bits.c)
+add_solution(int-shifts-are-arithmetic int-shifts-are-arithmetic.c)
+add_solution(int-size-is-32 int-size-is-32.c)
+add_solution(is-little-endian is-little-endian.c)
+add_solution(leftmost-one leftmost-one.c)
+add_solution(lower-one-mask lower-one-mask.c)
+add_solution(odd-ones odd-ones.c)
+add_solution(replace-byte replace-byte.c)
+add_solution(rotate-left rotate-left.c)
+add_solution(show-bytes show-bytes.c)
+add_solution(srl-and-sra srl-and-sra.c)
+add_solution(xbyte xbyte.c)
 add_solution(cs-copy-int copy-int.c)
+add_solution(saturating-add saturating-add.c)
