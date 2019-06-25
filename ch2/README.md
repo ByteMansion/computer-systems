@@ -2,17 +2,17 @@
 ## Solutions to Homework Problems
 
 ### 2.55 2.56 2.57
-[show-bytes.c](./show-bytes.c)
+[show-bytes.c](./src/show-bytes.c)
 
 ### 2.58
-[is-little-endian.c](./is-little-endian.c)
+[is-little-endian.c](./src/is-little-endian.c)
 
 ### 2.59
 ```c
 (x & (0xFF)) | ((y >> 8) << 8)
 ```
 ### 2.60
-[repalce-byte.c](./repalce-byte.c)
+[repalce-byte.c](./src/repalce-byte.c)
 
 ### 2.61
 A. 
@@ -34,16 +34,16 @@ x ^= ((x >> b_cnt) << b_cnt)
 ```
 
 ## 2.62
-[int-shifts-are-arithmetic.c](./int-shifts-are-arithmetic.c)
+[int-shifts-are-arithmetic.c](./src/int-shifts-are-arithmetic.c)
 
 ## 2.63
-[srl-and-sra.c](./srl-and-sra.c)
+[srl-and-sra.c](./src/srl-and-sra.c)
 
 ## 2.64
-[any-odd-one.c](./any-odd-one.c)
+[any-odd-one.c](./src/any-odd-one.c)
 
 ## 2.65
-[odd-ones.c](./odd-ones.c)
+[odd-ones.c](./src/odd-ones.c)
 
 This solution is very tricky.
 
@@ -79,7 +79,7 @@ Generate mask indicating leftmost 1 in x. x is an unsigned integer.
 
 **Hint** First tansform x into a bit vector of the form [0 ... 01 ... 1].
 
-[leftmost-one.c](./leftmost-one.c)
+[leftmost-one.c](./src/leftmost-one.c)
 
 This is also a tricky solution.
 
@@ -95,16 +95,16 @@ In section 6.5.7 Bitwise shift operators of c11 stardard, it said
 
 B. & C.
 
-[int-size-is-32.c](./int-size-is-32.c)
+[int-size-is-32.c](./src/int-size-is-32.c)
 
 ## 2.68
-[lower-one-mask.c](./lower-one-mask.c)
+[lower-one-mask.c](./src/lower-one-mask.c)
 
 ## 2.69
-[rotate-left.c](./rotate-left.c)
+[rotate-left.c](./src/rotate-left.c)
 
 ## 2.70
-[fits-bits.c](./fits-bits.c)
+[fits-bits.c](./src/fits-bits.c)
 
 ## 2.71
 A.
@@ -113,5 +113,5 @@ The code cannot signed extend to 32-bits integer.
 
 B.
 
-[xbyte.c](./xbyte.c)
+[xbyte.c](./src/xbyte.c)
 
