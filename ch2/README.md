@@ -12,7 +12,7 @@
 (x & (0xFF)) | ((y >> 8) << 8)
 ```
 ### 2.60
-[repalce-byte.c](./src/repalce-byte.c)
+[repalce-byte.c](./src/replace-byte.c)
 
 ### 2.61
 A. 
