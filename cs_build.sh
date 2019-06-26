@@ -41,7 +41,7 @@ fi
 # do light Clean
 if test $light_clean -eq 1
 then
-    if [-e bin -a -d bin]; then
+    if [ -e bin -a -d bin ]; then
         rm -fr bin
     fi
 fi
@@ -55,7 +55,15 @@ else
 fi
 
 # compile source files and build executables
-cmake .. && cmake --build ./
+if test $do_clean -eq 1
+then
+    cmake ..
+    cmake --build .
+elif test $light_clean -eq 1
+then
+  cmake .
+  cmake --build .
+fi
 
 # create binary library
 if ( test $? -eq 0 ); then

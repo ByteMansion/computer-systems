@@ -130,6 +130,12 @@ B.
 ## 2.74
 [tsub-ok.c](./src/tsub-ok.c)
 
+## 2.75
+Compute high-order bits of x*y for signed and unsigned variables.
+
+[high-prod.c](./src/high-prod.c)
+
+
 
 
 
