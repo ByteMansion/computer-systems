@@ -37,5 +37,8 @@ int main(int argc, char** argv)
     sum = saturating_add(INT_MAX, 10);
     assert(sum == INT_MAX);
 
+    sum = saturating_add(INT_MIN, INT_MIN);
+    assert(sum == INT_MIN);
+
     return 0;
 }

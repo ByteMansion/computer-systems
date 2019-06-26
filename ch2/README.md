@@ -126,3 +126,10 @@ B.
 
 ## 2.73
 [saturating-add.c](./src/saturating-add.c)
+
+## 2.74
+[tsub-ok.c](./src/tsub-ok.c)
+
+
+
+
