@@ -55,15 +55,8 @@ else
 fi
 
 # compile source files and build executables
-if test $do_clean -eq 1
-then
-    cmake ..
-    cmake --build .
-elif test $light_clean -eq 1
-then
-  cmake .
-  cmake --build .
-fi
+cmake ..
+cmake --build .
 
 # create binary library
 if ( test $? -eq 0 ); then
