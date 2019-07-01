@@ -139,6 +139,9 @@ Compute high-order bits of x*y for signed and unsigned variables.
 ## 2.76
 [calloc.c](./src/calloc.c)
 
+## 2.78
+[divide-power2.c](./src/divide-power2.c)
+
 
 
 
