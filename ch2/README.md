@@ -142,6 +142,8 @@ Compute high-order bits of x*y for signed and unsigned variables.
 ## 2.78
 [divide-power2.c](./src/divide-power2.c)
 
+## 2.79
+[mul3div4.c](./src/mul3div4.c)
 
 
 
