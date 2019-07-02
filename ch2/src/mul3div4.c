@@ -31,11 +31,15 @@ int main(int argc, char** argv)
 
     x = -7;
     printf("x = %d, mul3div4 = %d\n", x, mul3div4(x));
-    printf("float_mul3div4 = %f\n", x * 3.0 / 4.0);
+    // printf("float_mul3div4 = %f\n", x * 3.0 / 4.0);
+
+    x = -9;
+    printf("x = %d, mul3div4 = %d\n", x, mul3div4(x));
+    // printf("float_mul3div4 = %f\n", x * 3.0 / 4.0);
 
     x = 10;
     printf("x = %d, mul3div4 = %d\n", x, mul3div4(x));
-    printf("float_mul3div4 = %f\n", x * 3.0 / 4.0);
+    // printf("float_mul3div4 = %f\n", x * 3.0 / 4.0);
 
     return 0;
 }

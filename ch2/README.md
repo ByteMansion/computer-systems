@@ -139,12 +139,36 @@ Compute high-order bits of x*y for signed and unsigned variables.
 ## 2.76
 [calloc.c](./src/calloc.c)
 
+## 2.77
+- multiply integer variable x by various different constant factors K
+- use only the operations `+`, `-`, and `<<`
+- write C expression to perform the multiplication using at most three operations per expression
+
+A.  K = 17
+```c
+x = (x << 4) + x;
+```
+B.  K = -7
+```c
+x = x - (x << 3);
+```
+C.  K = 60
+```c
+x = (x << 6) - (x << 2);
+```
+D.  K = -112
+```c
+x = (x << 4) - (x << 7);
+```
+
 ## 2.78
 [divide-power2.c](./src/divide-power2.c)
 
 ## 2.79
 [mul3div4.c](./src/mul3div4.c)
 
+## 2.80
+[threeforths.c](./src/threeforths.c)
 
 
 

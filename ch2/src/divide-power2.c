@@ -24,7 +24,7 @@ int main(int argc, char** argv)
 {
     int x, k;
 
-    x = -9;
+    x = -7;
     k = 2;
     printf("x = %d, k = %d, divide power = %d\n", x, k, divide_power2(x, k));
 
