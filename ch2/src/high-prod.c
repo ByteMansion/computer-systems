@@ -28,7 +28,7 @@ int main(int argc, char **argv)
     unsigned x = 0x12345678;
     unsigned y = 0x12345678;
 
-    printf("Product of x and y: %llx\n", (uint64_t)x * y);
+    printf("Product of x and y: %lx\n", (uint64_t)x * y);
     printf("High 32-bit value: %x\n", unsigned_high_prod(x, y));
 
     return 0;
