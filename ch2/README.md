@@ -170,5 +170,68 @@ x = (x << 4) - (x << 7);
 ## 2.80
 [threeforths.c](./src/threeforths.c)
 
+## 2.81
+A.
+```c
+-1 << k
+```
+B.
+```c
+~(-1 << k) << j
+```
+
+## 2.82
+A.
+```c
+(x< y) == (-x>-y)
+```
+- wrong. When x is INT_MIN, the result is wrong.
+
+B. 
+```c
+((x+y)<<4)+y-x == 17*y+15*x
+```
+right. Right shift is equal to product.
+
+C.
+```c
+~x+~y+1 == ~(x+y)
+```
+right. Review the formula of calculating the opposite of an integer.
+`~x+1+~y+1-1 ==> (-x)+(-y)-1 ==> -(x+y)-1 ==> ~(x+y)`
+
+D.
+```c
+(ux-uy) == -(unsigned)(y-x)
+```
+right.
+`(uy-ux) == (unsigned)(y-x)`
+
+E.
+```c
+((x>>2)<<2) <= x
+```
+right.
+
+## 2.83
+A. Y / (2^k - 1)
+```
+
+if n = 0.y y y y y y ...
+    n << k = y. y y y y y ... = n + Y
+    that is
+    (n << k) - n = Y
+then
+    n * (2^k - 1) = Y
+    that is
+    n = Y / (2^k - 1)
+```
+B.
+
+- a) 5/7
+- b) 6/15 = 2/5
+- c) 19/63
+
+
 
 
