@@ -235,6 +235,53 @@ B.
 ## 2.84
 [float-le.c](./src/float-le.c)
 
+## 2.85
+A.
+
+for normalized values,
+$$ E = e - Bias, Bias = 2^{k-1}-1, f = \Sigma_{i = 1}^{n}{ (f_i * 2^{-i}) }, M = 1 + f, V = 2^{E} * M $$
+
+V = 7.0, E = 2, M = 1.75
+
+bit representation: 0 10...01 110...0
+
+if sizeof(float) == 4, then
+
+bit representation: 0 10000001 11000000000000000000000
+
+B.
+
+Get the biggest odd number:
+M = 1.11111...(all n bits are 1), f = 0.11111...(all n bits are 1)
+
+$ V = 2^E * M $.
+
+In the case, if we want to get an odd number, $ 2^E * f $ must be odd, which means $ \Sigma_{i = 1}^{n}{2^{E-i}} $ is odd. Therefor, $ E=n $.
+
+bit representation: 0 bias+n 1111...11
+
+if sizeof(float) == 4, then
+
+bits representation: 0 10010110 11111111111111111111111
+
+C.
+
+The least normalized value:
+
+$ Bias = 2^{k-1} - 1, E = 1 - Bias, M = 1.0, f = 0.000... $
+
+Therefore, $ V_{min} = 2^E $
+
+The reciprocal:
+
+$ V = 2^{bias-1} $
+
+Therefore,
+$$
+E = bias-1, M = 1.0, f = 0.00000...
+$$
+
+bits representation: 0 11...101 000...00
 
 
 

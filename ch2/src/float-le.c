@@ -22,7 +22,7 @@ int float_le(float x, float y)
     unsigned ux = f2u(x);
     unsigned uy = f2u(y);
 
-    // printf("unsigned x = %u, unsigned y = %u\n", ux, uy);
+    printf("unsigned x = 0x%x, unsigned y = 0x%x\n", ux, uy);
 
     /* Get the sign bit */
     unsigned sx = ux >> 31;
@@ -41,6 +41,6 @@ int main(int argc, char** argv)
     assert(float_le(-0.0, 0.0));
     assert(float_le(0.0, -0.0));
     assert(float_le(-3.2, -1.0));
-    assert(float_le(5.00, 5.001));
+    assert(float_le(7.00, 7.001));
     return 0;
 }
