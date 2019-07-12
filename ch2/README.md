@@ -290,6 +290,14 @@ Omit.
 
 [fpwr2.c](./src/fpwr2.c)
 
+## 2.91
+Omit.
+
+## 2.92
+
+[float-negate.c](./src/float-negate.c)
+
+
 
 
 

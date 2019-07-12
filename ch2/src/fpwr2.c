@@ -51,19 +51,19 @@ int main(int argc, char** argv)
     int x;
 
     x = -150;
-    printf("x = %d, pow(x) = %f\n", x, fpwr2(x));
+    printf("x = %d, pow(x) = %.50f\n", x, fpwr2(x));
 
     x = -133;
-    printf("x = %d, pow(x) = %f\n", x, fpwr2(x));
+    printf("x = %d, pow(x) = %.50f\n", x, fpwr2(x));
 
     x = -126;
-    printf("x = %d, pow(x) = %f\n", x, fpwr2(x));
+    printf("x = %d, pow(x) = %.50f\n", x, fpwr2(x));
 
     x = -1;
-    printf("x = %d, pow(x) = %f\n", x, fpwr2(x));
+    printf("x = %d, pow(x) = %.50f\n", x, fpwr2(x));
 
     x = 127;
-    printf("x = %d, pow(x) = %f\n", x, fpwr2(x));
+    printf("x = %d, pow(x) = %.50f\n", x, fpwr2(x));
 
     x = 150;
     printf("x = %d, pow(x) = %f\n", x, fpwr2(x));
