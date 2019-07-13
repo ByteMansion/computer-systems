@@ -297,6 +297,9 @@ Omit.
 
 [float-negate.c](./src/float-negate.c)
 
+## 2.93
+
+[float-half.c](./src/float-absval.c)
 
 
 
