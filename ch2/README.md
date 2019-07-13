@@ -305,6 +305,7 @@ Omit.
 
 [float-twice.c](./src/float-twice.c)
 
+## 2.95
 
-
+[float-half.c](./src/float-half.c)
 
