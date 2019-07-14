@@ -309,3 +309,6 @@ Omit.
 
 [float-half.c](./src/float-half.c)
 
+## 2.96
+
+[float-f2i.c](./src/float-f2i.c)
