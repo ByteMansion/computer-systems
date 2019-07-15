@@ -1,7 +1,7 @@
 # Computer Systems - A Programmer's Perspective
 
 ## Why this repo?
-- List solutions to Homework Problems of the classic cs book - Computer Systems: a programmer's perspective.
+- List solutions to Homework Problems of the classic cs book - Computer Systems: a programmer's perspective $ 3^{rd}$.
 - Document some important points.
 
 ## Prerequisite
@@ -21,6 +21,12 @@ Execute `cs_build.sh` script to build all files.
 
 Above command will create 2 folders `build` and `bin` in current path.
 `build` folder is for build files and `bin` folder is for all executables.
+
+## Execution
+Enter `bin` folder and find all executables. If you want to execute a certain executables,just use like following command:
+```
+./cs-showbytes
+```
 
 ## Catalogue
 

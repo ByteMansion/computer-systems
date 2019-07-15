@@ -48,14 +48,14 @@ x ^= ((x >> b_cnt) << b_cnt)
 This solution is very tricky.
 
 **On one side:**
-If we only have 4 bits, it is easy to get a odd number of 1s.
+If we only have 4 bits, it is easy to get a odd number of `1`s.
 They are as follows: 
 
 0001(0x1), 0010(0x2), 0100(0x4), 1000(0x8), 0111(0x7), 1011(0xB), 1101(0xD), 1110(0xE).
 
 Therefore, we can create an table to save those cases.
 
-`0x6996(0110 1001 1001 0110)` means if the `i`th bit value is 1, `i` has odd number of 1s.(i = 0,1,2,...)
+`0x6996(0110 1001 1001 0110)` means if the $ i_{th} $ bit value is 1, `i` has odd number of 1s.(i = 0,1,2,...)
 
 If 32 bits can decrease to 4 bits, the problem can be solved.
 
@@ -70,7 +70,7 @@ x ^= x >> 16  // x is unsigned integer with 32 bits
 ```
 The low 16 bits is `a`, high 16 bits is `b`. `x = a ^ b` will set the bit position as 0 if they are all 1.
 Now, we get a integer in which bit value 1 denotes `a` and `b` have an defferent bit value in that position.
-If the number of 1s is odd, all 1s in original `x` is odd.
+If the number of `1`s is odd, all `1`s in original `x` is odd.
 
 The algorithm is same to 16 bits, 8 bits, and 4 bits integers.
 
@@ -83,14 +83,14 @@ Generate mask indicating leftmost 1 in x. x is an unsigned integer.
 
 This is also a tricky solution.
 
-First of all, you have to know the meaning of `Hint`. If so, solution maybe rise.
+First of all, you have to know the meaning of `Hint`. Then, the solution emerges.
 
-Compared with previous solution, right shift here is to set right position of leftmost 1 as 1 no matter what value it was.
+Opposite to previous solution, right shift here is to fill all right positions of leftmost 1 with `1`s no matter what value it was.
 
 ## 2.67
 A.
 
-In section 6.5.7 Bitwise shift operators of c11 stardard, it said
+In section 6.5.7 - Bitwise shift operators, of c11 stardard, it said
 - If the value of the right operand is negative or is greater than or equal to the width of the promoted left operand, the behavior is undefined.
 
 B. & C.
@@ -109,7 +109,7 @@ B. & C.
 ## 2.71
 A.
 
-The code cannot signed extend to 32-bits integer.
+If the byte is signed, this code cannot give the right result - a 32-bit signed integer.
 
 B.
 
@@ -312,3 +312,7 @@ Omit.
 ## 2.96
 
 [float-f2i.c](./src/float-f2i.c)
+
+## 2.97
+
+[float-i2f.c](./src/float-i2f.c)

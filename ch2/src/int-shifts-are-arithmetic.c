@@ -14,7 +14,7 @@
 int int_shifts_are_arithmetic(void)
 {
     int num = -1;
-    return !(num ^ (num >> 1));  // if arithmetic shift, xor gets 0
+    return !(num ^ (num >> 1));  // if it is arithmetic shift, xor gets 0
 }
 
 int main(int argc, char **argv)

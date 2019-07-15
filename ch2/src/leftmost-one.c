@@ -17,8 +17,9 @@ int leftmost_one(unsigned x)
     x |= x >> 16;
 
     /**
-     * Then mask can be got if (x >> 1) and then add 1
-     * e.g. 0111 -> 0011 -> 0100
+     * First, get a value that is all 1s in leftmost position and after it.
+     * Then, move the value right one position and add 1.
+     * e.g. if x is 0101, the process is: 0111 -> 0011 -> 0100
      * !Note: we have to tackle the special case (x = 0)
      * If x is 0, add 1 is not correct.
      */
