@@ -67,5 +67,6 @@ if ( test $? -eq 0 ); then
        mkdir bin && cd bin
     fi
     cp ../build/ch2/src/cs-* ./
+    cp ../build/ch3/src/cs-* ./
 fi
 

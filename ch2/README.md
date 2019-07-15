@@ -33,16 +33,16 @@ b_cnt = ((sizeof(int) - 1) << 3);
 x ^= ((x >> b_cnt) << b_cnt)
 ```
 
-## 2.62
+### 2.62
 [int-shifts-are-arithmetic.c](./src/int-shifts-are-arithmetic.c)
 
-## 2.63
+### 2.63
 [srl-and-sra.c](./src/srl-and-sra.c)
 
-## 2.64
+### 2.64
 [any-odd-one.c](./src/any-odd-one.c)
 
-## 2.65
+### 2.65
 [odd-ones.c](./src/odd-ones.c)
 
 This solution is very tricky.
@@ -74,7 +74,7 @@ If the number of `1`s is odd, all `1`s in original `x` is odd.
 
 The algorithm is same to 16 bits, 8 bits, and 4 bits integers.
 
-## 2.66
+### 2.66
 Generate mask indicating leftmost 1 in x. x is an unsigned integer.
 
 **Hint** First tansform x into a bit vector of the form [0 ... 01 ... 1].
@@ -87,7 +87,7 @@ First of all, you have to know the meaning of `Hint`. Then, the solution emerges
 
 Opposite to previous solution, right shift here is to fill all right positions of leftmost 1 with `1`s no matter what value it was.
 
-## 2.67
+### 2.67
 A.
 
 In section 6.5.7 - Bitwise shift operators, of c11 stardard, it said
@@ -97,16 +97,16 @@ B. & C.
 
 [int-size-is-32.c](./src/int-size-is-32.c)
 
-## 2.68
+### 2.68
 [lower-one-mask.c](./src/lower-one-mask.c)
 
-## 2.69
+### 2.69
 [rotate-left.c](./src/rotate-left.c)
 
-## 2.70
+### 2.70
 [fits-bits.c](./src/fits-bits.c)
 
-## 2.71
+### 2.71
 A.
 
 If the byte is signed, this code cannot give the right result - a 32-bit signed integer.
@@ -115,7 +115,7 @@ B.
 
 [xbyte.c](./src/xbyte.c)
 
-## 2.72
+### 2.72
 A.
 
 The result of (maxbytes-sizeof(val)) is always unsigned integer cuz the return value of sizeof(val) is unsigned long.
@@ -124,22 +124,22 @@ B.
 
 [copy-int.c](./src/copy-int.c)
 
-## 2.73
+### 2.73
 [saturating-add.c](./src/saturating-add.c)
 
-## 2.74
+### 2.74
 [tsub-ok.c](./src/tsub-ok.c)
 
-## 2.75
+### 2.75
 Compute high-order bits of x*y for signed and unsigned variables.
 
 [high-prod.c](./src/high-prod.c)
 
 
-## 2.76
+### 2.76
 [calloc.c](./src/calloc.c)
 
-## 2.77
+### 2.77
 - multiply integer variable x by various different constant factors K
 - use only the operations `+`, `-`, and `<<`
 - write C expression to perform the multiplication using at most three operations per expression
@@ -161,16 +161,16 @@ D.  K = -112
 x = (x << 4) - (x << 7);
 ```
 
-## 2.78
+### 2.78
 [divide-power2.c](./src/divide-power2.c)
 
-## 2.79
+### 2.79
 [mul3div4.c](./src/mul3div4.c)
 
-## 2.80
+### 2.80
 [threeforths.c](./src/threeforths.c)
 
-## 2.81
+### 2.81
 A.
 ```c
 -1 << k
@@ -180,7 +180,7 @@ B.
 ~(-1 << k) << j
 ```
 
-## 2.82
+### 2.82
 A.
 ```c
 (x< y) == (-x>-y)
@@ -213,7 +213,7 @@ E.
 ```
 right.
 
-## 2.83
+### 2.83
 A. Y / (2^k - 1)
 ```
 
@@ -232,10 +232,10 @@ B.
 - b) 6/15 = 2/5
 - c) 19/63
 
-## 2.84
+### 2.84
 [float-le.c](./src/float-le.c)
 
-## 2.85
+### 2.85
 A.
 
 for normalized values,
@@ -283,36 +283,36 @@ $$
 
 bits representation: 0 11...101 000...00
 
-## 2.86 2.87 2.88 2.89
+### 2.86 2.87 2.88 2.89
 Omit.
 
-## 2.90
+### 2.90
 
 [fpwr2.c](./src/fpwr2.c)
 
-## 2.91
+### 2.91
 Omit.
 
-## 2.92
+### 2.92
 
 [float-negate.c](./src/float-negate.c)
 
-## 2.93
+### 2.93
 
 [float-half.c](./src/float-absval.c)
 
-## 2.94
+### 2.94
 
 [float-twice.c](./src/float-twice.c)
 
-## 2.95
+### 2.95
 
 [float-half.c](./src/float-half.c)
 
-## 2.96
+### 2.96
 
 [float-f2i.c](./src/float-f2i.c)
 
-## 2.97
+### 2.97
 
 [float-i2f.c](./src/float-i2f.c)

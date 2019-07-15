@@ -3,3 +3,4 @@ project(cs)
 enable_testing()
 
 add_subdirectory(ch2)
+add_subdirectory(ch3)

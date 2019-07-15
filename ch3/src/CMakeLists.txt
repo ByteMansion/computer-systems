@@ -1,0 +1,1 @@
+add_solution(cs-decode2     decode2.c)

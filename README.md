@@ -31,5 +31,6 @@ Enter `bin` folder and find all executables. If you want to execute a certain ex
 ## Catalogue
 
 [Chapter2 Representing and Manipulating Information信息的表示和处理](./ch2/)
+[Chpater3 Machine-Level Representation of Programs](./ch3/)
 
 
