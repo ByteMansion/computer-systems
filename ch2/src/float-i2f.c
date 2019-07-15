@@ -29,18 +29,56 @@ static unsigned leftmost_one(unsigned i)
 
 float_bits float_i2f(int i)
 {
-    unsigned sign = i >> 31;
+    unsigned sign  = 0;
+    unsigned exp   = 0;
+    unsigned frac  = 0;
+    if (i == 0) {
+        return (sign << 31) | (exp << 23) | frac;
+    }
+
+    sign = i >> 31;
 
     // get the left-most 1 in i
     unsigned nosign = i ^ (sign << 31);
-    unsigned leftmost = leftmost_one(nosign);
-    unsigned frac = ((nosign - leftmost) ^ nosign);
+    if (sign)
+    {
+        nosign = (1 << 31) - nosign;
+    }
+    
 
+    // get leftmost one and the length from the first one to the end
+    unsigned leftmost = leftmost_one(nosign);
+    unsigned length = 31;
+    while (!((1 << length) & leftmost))
+    {
+        length -= 1;
+    }
+    
+    frac = nosign - leftmost;  // get all ones except for the leftmost
+    if (length > 23) {
+        frac = (frac >> (length - 23)) & 0x7FFFFF;
+    } else {
+        frac = (frac << (23 - length)) & 0x7FFFFF;
+    }
+    
+    return (sign << 31) | ((127+length) << 23) | frac;
 }
 
 int main(int argc, char** argv)
 {
+    int i;
 
+    i = 0x12345678;  // positive
+    printf("i = %d, f = %f\n", i, u2f(float_i2f(i)));
+
+    i = 0x8F123456;  // negative
+    printf("i = %d, f = %f\n", i, u2f(float_i2f(i)));
+
+    i = 0x8FFFFF00;  // negative, small integer
+    printf("i = %d, f = %f\n", i, u2f(float_i2f(i)));
+
+    i = 0x00000FFF;  // positive, small integer
+    printf("i = %d, f = %f\n", i, u2f(float_i2f(i)));
 
     return 0;
 }
