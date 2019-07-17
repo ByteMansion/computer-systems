@@ -15,9 +15,9 @@ First of all, the system should meet below basic demands.
 ## Build
 Execute `cs_build.sh` script to build all files.
 `cs_build.sh` supports several options:
-1. -c  Clean build.
-2. -l  Light clean and build.
-3. -h  Help
+1. `-c`  Clean build.
+2. `-l`  Light clean and build.
+3. `-h`  Help
 
 Above command will create 2 folders `build` and `bin` in current path.
 `build` folder is for build files and `bin` folder is for all executables.
@@ -25,12 +25,13 @@ Above command will create 2 folders `build` and `bin` in current path.
 ## Execution
 Enter `bin` folder and find all executables. If you want to execute a certain executables,just use like following command:
 ```
-./cs-showbytes
+./cs-showbytes  # this is an example executable
 ```
 
 ## Catalogue
 
-[Chapter2 Representing and Manipulating Information信息的表示和处理](./ch2/)
+[Chapter2 Representing and Manipulating Information](./ch2/)
+
 [Chpater3 Machine-Level Representation of Programs](./ch3/)
 
 

@@ -117,3 +117,4 @@ First of all, above code does not use conditional move transfer instruction.
 Secondly, before dereferencing address, `compq` instruction test its validity. I think it has avoided the problem of chapter 3.6.6.
 
 [cread-alt.c](./src/cread-alt.c)
+
