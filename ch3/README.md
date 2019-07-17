@@ -2,7 +2,6 @@
 ## Solutions to Homework Problems
 
 ### 3.58
-
 [decode2.c](./src/decode2.c)
 
 ### 3.59
@@ -53,7 +52,6 @@ x_{ext} * y_{ext} = (x_h * y_l + x_l * y_h) * 2^{64} + x * y
 $$
 
 ### 3.60
-
 A.
 
 x in %rdx, n in %r8, result in %rax, mask in %rdx.
@@ -119,5 +117,7 @@ Secondly, before dereferencing address, `compq` instruction test its validity. I
 [cread-alt.c](./src/cread-alt.c)
 
 ### 3.62
-
 [switch3.c](./src/switch3.c)
+
+### 3.63
+[switch-prob.c](./src/switch-prob.c)

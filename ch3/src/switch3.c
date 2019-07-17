@@ -42,7 +42,7 @@ long switch3(long *p1, long *p2, mode_t action)
 
 int main(int argc, char** argv)
 {
-    for(mode_t mode = MODE_FIRST; mode <= MODE_END; ++mode) {
+    for(mode_t mode = MODE_FIRST; mode <= MODE_END; ++mode) {  // include a default hit value
         long x = 100;
         long y = 500;
         printf("mode = %u, result = %ld\n", mode, switch3(&x, &y, mode));
