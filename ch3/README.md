@@ -118,3 +118,6 @@ Secondly, before dereferencing address, `compq` instruction test its validity. I
 
 [cread-alt.c](./src/cread-alt.c)
 
+### 3.62
+
+[switch3.c](./src/switch3.c)

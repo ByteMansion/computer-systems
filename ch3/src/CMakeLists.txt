@@ -1,3 +1,4 @@
 add_solution(cs-decode2     decode2.c)
 add_solution(cs-loop    loop.c)
 add_solution(cs-cread-alt   cread-alt.c)
+add_solution(cs-switch3     switch3.c)
