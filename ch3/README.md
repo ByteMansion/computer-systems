@@ -53,3 +53,67 @@ x_{ext} * y_{ext} = (x_h * y_l + x_l * y_h) * 2^{64} + x * y
 $$
 
 ### 3.60
+
+A.
+
+x in %rdx, n in %r8, result in %rax, mask in %rdx.
+
+B.
+
+result is initialized as 0, mask is initialized as 1.
+
+C.
+
+if mask is zero.
+
+D.
+
+arithmatic left shit.
+
+E.
+
+Bit operation `xor`.
+
+F.
+
+[loop.c](./src/loop.c)
+
+### 3.61
+(p. 218)
+```c
+long cread(long *xp) {
+    return (xp ? *xp : 0);
+}
+```
+At first, this seems like a good candidate to compile using a conditional move to set the result to zero when the pointer is null, as shown in the following assembly code:
+```s
+# long cread(long *xp)
+# Invalid implementation of function cread
+# xp in register %rdi
+cread:
+    moveq   (%rdi), %rax    # v = *xp
+    testq   %rdi, %rdi      # test x
+    movl    $0, %eax        # set ve = 0
+    cmove   %rdx, %rax      # if x == 0, v = ve
+    ret                     # return v
+```
+This implementation is invalid, however, since the dereferencing of xp by the `movq` instruction (line 2) occurs even when the test fails, causing a null pointer dereferencing error. Instead, this code must be compiled using branching code.
+
+But, I compile this function and then use command `objdump` to generate its assembly code.
+```s
+  400846:	55                   	push   %rbp
+  400847:	48 89 e5             	mov    %rsp,%rbp
+  40084a:	48 89 7d f8          	mov    %rdi,-0x8(%rbp)
+  40084e:	48 83 7d f8 00       	cmpq   $0x0,-0x8(%rbp)
+  400853:	74 09                	je     40085e <cread+0x18>
+  400855:	48 8b 45 f8          	mov    -0x8(%rbp),%rax
+  400859:	48 8b 00             	mov    (%rax),%rax
+  40085c:	eb 05                	jmp    400863 <cread+0x1d>
+  40085e:	b8 00 00 00 00       	mov    $0x0,%eax
+  400863:	5d                   	pop    %rbp
+  400864:	c3                   	retq 
+```
+First of all, above code does not use conditional move transfer instruction.
+Secondly, before dereferencing address, `compq` instruction test its validity. I think it has avoided the problem of chapter 3.6.6.
+
+[cread-alt.c](./src/cread-alt.c)
