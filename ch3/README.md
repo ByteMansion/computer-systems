@@ -143,3 +143,31 @@ S * T = 65, T = 13, R * S * T = 3640 / 8.
 $$
 R = 7, S = 5, T = 13.
 
+### 3.65
+A.
+
+&A[i][j] in %rdx.
+
+B.
+
+&A[j][i] in %rax.
+
+C.
+
+M = 15.
+
+### 3.66
+NR(n) = 3 * n, NC(n) = 4 * n + 1.
+```s
+...
+    leaq    1(, %rdi, 4), %r8       # (4 * n + 1) in %r8
+    leaq    (%rdi, %rdi, 2), %rax
+    movq    %rax, %rdi              # (3 * n) in %rdi
+...
+    addq    (%rcx), %rax            # result += A[i][j]
+    addq    $1, %rdx
+    leaq    (%rsi, %rdx, 8), %rcx   # &A[i][j] + 8*(4*n+1)
+    add     %r8, %rcx
+    comq    %rdi, %rdx              # compare row num with (3*n)
+...
+```
