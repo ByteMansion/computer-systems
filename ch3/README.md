@@ -257,3 +257,20 @@ typedef struct {
     long x[4];
 } a_struct;
 ```
+
+### 3.70
+A.
+
+0 8 0 8
+
+B.
+
+16
+
+C.
+```c
+up->x = *(up->next->p) - y
+```
+
+### 3.71
+[good-echo.c](./src/good-echo.c)
