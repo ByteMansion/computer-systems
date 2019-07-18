@@ -171,3 +171,41 @@ NR(n) = 3 * n, NC(n) = 4 * n + 1.
     comq    %rdi, %rdx              # compare row num with (3*n)
 ...
 ```
+### 3.67
+A.
+
+| |
+--
+| |
+| |
+|...|
+| |
+|move to %rdi|
+| ...|
+|z|
+|&z|
+|y|
+|x|
+
+x in %rsp, y in 8(%rsp), &z in 16(%rsp), z in 24(%rsp), 64(%rsp) to %rdi.
+
+B.
+
+eval passes address 64(%rsp) to process.
+
+C.
+
+process access the fields of result structure r through %rsp+offset displacement address.
+
+D.
+
+process set the fields of result structure r through %rdi+offset displacement address.
+
+E.
+
+eval access structure r through %rsp+offset.
+
+F.
+
+Caller gives the starting address to callee, and callee stores data from the passed address. After callee returns, caller access the data from passed starting address.
+
