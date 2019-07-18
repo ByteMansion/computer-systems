@@ -121,3 +121,25 @@ Secondly, before dereferencing address, `compq` instruction test its validity. I
 
 ### 3.63
 [switch-prob.c](./src/switch-prob.c)
+
+### 3.64
+A.
+
+If the array is 2D vector, $ D[R][C] $, then
+$$
+sizeof(D) = R * C * L, \And D[i][j] = D + L * (C * i + j).
+$$
+L is the size of type, such sizeof(int).
+
+If the array is 3D vector, $ A[R][S][T] $, then
+$$
+sizeof(A) = R * S * T * L, \And A[i][j][k] = A + L * (S*T*i + T*j + k).
+$$
+
+B.
+Based on those code, we can get:
+$$
+S * T = 65, T = 13, R * S * T = 3640 / 8.
+$$
+R = 7, S = 5, T = 13.
+

@@ -13,7 +13,7 @@ long switch_prob(long x, long n)
     switch (n)
     {
     case 0+0x3c:
-    // case 1+0x3c:
+    // case 1+0x3c:  /* we only have 6 entries in jump table */
     case 2+0x3c:
         result = 8 * x;
         break;
