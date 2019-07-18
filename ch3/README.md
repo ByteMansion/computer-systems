@@ -209,3 +209,23 @@ F.
 
 Caller gives the starting address to callee, and callee stores data from the passed address. After callee returns, caller access the data from passed starting address.
 
+### 3.68
+```s
+    movslq  8(%rsi), %rax
+    addq    32(%rsi), %rax
+```
+`q` in `%rsi`, `q->t` in `8(%rsi)`. Therefore, `char array[B]` occupies at least `5` bytes, at most `8` bytes.
+
+`sizeof(char)` is 1, we can get $ 5 \le B \le 8 $
+
+`q->u` in `32(%rsi)`. Therefore, `short s[A]` occupies at most `32-8-4=20` bytes, at least `14` bytes. 
+
+`sizeof(short)` is 2, we can get $ 7 \le A \le 10 $.
+
+```s
+    movq    %rax, 184(%rdi)
+```
+$ 184 - 8 < A * B * 4 \le 184 \Rightarrow 44 < A * B \le 46 $ 
+
+To sum up, A = 9, B = 5.
+
