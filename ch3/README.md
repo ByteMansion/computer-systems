@@ -229,3 +229,31 @@ $ 184 - 8 < A * B * 4 \le 184 \Rightarrow 44 < A * B \le 46 $
 
 To sum up, A = 9, B = 5.
 
+### 3.69
+A.
+
+CNT = 7
+```s
+mov     0x120(%rsi), %ecx
+add     (%rsi), %ecx
+```
+Above code corresponds to `int n = bp->first + bp->last`. Therefor, `a_struct a[CNT]` occupies at most `0x120 - 4 = 284` bytes.
+```s
+lea     (%rdi, %rdi, 4), %rax # 5 * i
+lea     (%rsi, %rax, 8), %rax # bp + 8 * 5 * i
+```
+Then, we can get the value $$ CNT = 284/40 = 7 $$
+
+B.
+```s
+mov     0x8(%rax), %rdx
+...
+mov     %rcx, 0x10(%rax, %rdx, 8)
+```
+From above code, we can get the field `idx` is 8 bytes, and each element of the filed `x` is 8 bytes.
+```c
+typedef struct {
+    long idx;
+    long x[4];
+} a_struct;
+```
