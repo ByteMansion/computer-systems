@@ -330,3 +330,6 @@ D.
 $ p $ is aligned by 16.
 
 $ s_2 $ is aligned by 8, but at least greater then multiple 16.
+
+### 3.73 3.74 3.75
+Omit.
