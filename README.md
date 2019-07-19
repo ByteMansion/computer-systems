@@ -29,6 +29,7 @@ Enter `bin` folder and find all executables. If you want to execute a certain ex
 ```
 
 ## Catalogue
+[Chapter1 A Tour of Computer Systems](./ch1/)
 
 [Chapter2 Representing and Manipulating Information](./ch2/)
 
