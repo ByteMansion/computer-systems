@@ -274,3 +274,59 @@ up->x = *(up->next->p) - y
 
 ### 3.71
 [good-echo.c](./src/good-echo.c)
+
+### 3.72
+A.
+
+```s
+leaq    22(, %rdi, 8), %rax
+andq    $-16, %rax          # 2's complement representation 0xFFFFFFF0
+```
+Above code is represented as $ (8 * n + 30) \And 0xFFFFFFF0 $, so 
+$$
+s_2 = s_1 - ((8 * n + 30) \And 0xFFFFFFF0)
+$$
+
+B.
+```s
+leaq    15(%rsp), %r8
+andq    $-16, %r8
+```
+Above code can be represented as $ (s_2 + 15) \And 0xFFFFFFF0 $, which is the address of $ p $.
+$$
+p = (s_2 + 15) \And 0xFFFFFFF0
+$$
+
+C. 
+
+Find values of n and $ s_1 $ that lead to minimum and maximum values of $ e_1 $
+
+Extra space $ e_2 $ may arise between $ s_2 $ and $ p $, and sxtra space $ e_1 $ may arise between the end of array $ p $ and $ s_1 $.
+
+2's complement representation 0f `30` is `0x0000001E`.
+
+If n is odd, then $ s_2 = s_1 - (8 * n  + 24) $
+
+If n is even, then $ s_2 = s_1 - (8 * n + 16) $
+
+**Minimum**
+
+- if $ n = 0 $, then $ s_1 - s_2 = e_1 + e_2 = 16 $.
+- if $ s_1 mod 16 = 0 $, then $ p = s_2 , e_1 = 2 $.
+- if $ s_1 mod 16 = 8 $, then $ p = s_2 + 8, e_1 = 1 $.
+
+In conclusion, the minimum $ e_1 $ is 1 (8 bytes), when $ n = 0, s_1 mod 16 = 8 $.
+
+**Maximum**
+
+- if $ n = 1 $, then $ s_1 - s_2 = e_1 + e_2 = 32 $.
+- if $ s_1 mod 16 = 0 $, then $ p = s_2, e_1 = 4 $.
+- if $ s_1 mod 16 = 8 $, then $ p = s_2 + 8, e_1 = 3 $.
+
+In conclusion, the maximum $ e_1 $ is $ n + 3 $, when $ n mod 2 = 1, s_1 mod 16 = 0 $.
+
+D.
+
+$ p $ is aligned by 16.
+
+$ s_2 $ is aligned by 8, but at least greater then multiple 16.
