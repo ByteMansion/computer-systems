@@ -2,7 +2,7 @@
 
 ## Why this repo?
 - List solutions to Homework Problems of the classic cs book - Computer Systems: a programmer's perspective $ 3^{rd}$.
-- Document some important points.
+- Document some important points or notes.
 
 ## Prerequisite
 This repo created an project to compile all source files and build executables.
@@ -19,13 +19,13 @@ Execute `cs_build.sh` script to build all files.
 2. `-l`  Light clean and build.
 3. `-h`  Help
 
-Above command will create 2 folders `build` and `bin` in current path.
+Compilation and Building will create 2 folders `build` and `bin` in current path.
 `build` folder is for build files and `bin` folder is for all executables.
 
 ## Execution
 Enter `bin` folder and find all executables. If you want to execute a certain executables,just use like following command:
-```
-./cs-showbytes  # this is an example executable
+```shell
+./cs-showbytes  # this is an executable example
 ```
 
 ## Catalogue
