@@ -1,4 +1,10 @@
 # Computer Systems - A Programmer's Perspective
+[Why this repo?](#Why-this-repo)
+[Prerequisite](#Prerequisite)
+[Build](#Build)
+[Execution](#Execution)
+[Contents](#Contents)
+
 
 ## Why this repo?
 - List solutions to Homework Problems of the classic cs book - Computer Systems: a programmer's perspective $ 3^{rd}$.
@@ -28,7 +34,7 @@ Enter `bin` folder and find all executables. If you want to execute a certain ex
 ./cs-showbytes  # this is an executable example
 ```
 
-## Catalogue
+## Contents
 [Chapter1 A Tour of Computer Systems](./ch1/)
 
 [Chapter2 Representing and Manipulating Information](./ch2/)
