@@ -1,9 +1,13 @@
 # Computer Systems - A Programmer's Perspective
-[Why this repo?](#Why-this-repo)
-[Prerequisite](#Prerequisite)
-[Build](#Build)
-[Execution](#Execution)
-[Contents](#Contents)
+1. [Why this repo?](#Why-this-repo)
+   
+2. [Prerequisite](#Prerequisite)
+   
+3. [Build](#Build)
+   
+4. [Execution](#Execution)
+   
+5. [Contents](#Contents)
 
 
 ## Why this repo?
