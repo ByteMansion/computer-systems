@@ -45,4 +45,9 @@ Enter `bin` folder and find all executables. If you want to execute a certain ex
 
 [Chpater3 Machine-Level Representation of Programs](./ch3/)
 
+[Chaoter4 Processor Architecture](./ch4/)
+
+## Materials
+1. Official website of this book: https://csapp.cs.cmu.edu
+2. Student site for this book: http://csapp.cs.cmu.edu/3e/students.html
 
