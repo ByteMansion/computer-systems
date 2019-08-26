@@ -1,4 +1,9 @@
 # Chapter 4
+## Materials
+Y86-64 is a simulator used to compile AS program in this book. Source distribution and guide manual are all provided on its [official site](csapp.cs.cmu.edu/3e/students.html). 
+
+I also provide the simulator source distribution and guide manual in sub-folder `sim`.
+
 ## Solutions to Homework Problems
 
 ### 4.45
