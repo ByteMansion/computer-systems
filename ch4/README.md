@@ -29,8 +29,26 @@ This is different from the result of Practice Problem 4.7 and conflicts with pre
 
 B.
 
-The code sequence can be changed as the following 2 instructions:
+The code sequence can be changed into following 2 instructions:
 ```as
 mov REG, -8(%rsp)
 subq $8, %rsp
+```
+
+### 4.46
+A.
+
+No. If REG is `%rsp`, the instruction is equivalent to below 2 instructions:
+```as
+movq (%rsp), %rsp
+addq $8, %rsp
+```
+First instruction pops the value located in `(%rsp)` into the register `%rsp`, but second instruction modifies it. This is different from previous analysis.
+
+B.
+
+The code sequence can be changed into following 2 instructions:
+```as
+add $8, %rsp
+movq -8(%rsp), REG
 ```
