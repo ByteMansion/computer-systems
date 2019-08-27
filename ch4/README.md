@@ -52,3 +52,10 @@ The code sequence can be changed into following 2 instructions:
 add $8, %rsp
 movq -8(%rsp), REG
 ```
+
+### 4.47
+A.
+
+[bubble-b.c](./src/bubble-b.c)
+
+B.

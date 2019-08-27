@@ -1,0 +1,1 @@
+add_solution(cs-bubble-b    bubble-b.c)
