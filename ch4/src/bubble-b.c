@@ -6,7 +6,7 @@
  * 
  */
 
-#include <stdio.h>
+#include "util.h"
 
 void bubble_b(long* data, long count)
 {
@@ -20,14 +20,6 @@ void bubble_b(long* data, long count)
             }
         }
     }
-}
-
-static void print_array(long* data, long count)
-{
-    long i;
-    for(int i = 0; i < count; i++)
-        printf("%ld\t", *(data+i));
-    printf("\n");
 }
 
 int main(int argc, char** argv)

@@ -56,6 +56,8 @@ movq -8(%rsp), REG
 ### 4.47
 A.
 
-[bubble-b.c](./src/bubble-b.c)
+Bubblesort using array referencing: [bubble-a.c](./src/bubble-a.c)
+
+Bubblesort using pointer referencing: [bubble-b.c](./src/bubble-b.c)
 
 B.
