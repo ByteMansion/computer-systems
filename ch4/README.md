@@ -69,3 +69,6 @@ Y86-64 program:
 [bubble-b.ys](./src/bubble-b.ys)
 
 [bubble-b.yo](./src/bubble-b.yo)
+
+### 4.28
+Using no jumps at most three conditional moves: [bubble-cond.ys](./src/bubble-cond.ys)
