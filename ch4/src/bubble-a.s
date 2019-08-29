@@ -3,78 +3,37 @@
 	.globl	bubble_a
 	.type	bubble_a, @function
 bubble_a:
-.LFB0:
+.LFB23:
 	.cfi_startproc
-	pushq	%rbp
-	.cfi_def_cfa_offset 16
-	.cfi_offset 6, -16
-	movq	%rsp, %rbp
-	.cfi_def_cfa_register 6
-	movq	%rdi, -40(%rbp)
-	movq	%rsi, -48(%rbp)
-	movq	-48(%rbp), %rax
-	subq	$1, %rax
-	movq	%rax, -16(%rbp)
+	subq	$1, %rsi
 	jmp	.L2
-.L6:
-	movq	$0, -24(%rbp)
-	jmp	.L3
-.L5:
-	movq	-24(%rbp), %rax
-	addq	$1, %rax
-	leaq	0(,%rax,8), %rdx
-	movq	-40(%rbp), %rax
-	addq	%rdx, %rax
-	movq	(%rax), %rdx
-	movq	-24(%rbp), %rax
-	leaq	0(,%rax,8), %rcx
-	movq	-40(%rbp), %rax
-	addq	%rcx, %rax
-	movq	(%rax), %rax
-	cmpq	%rax, %rdx
-	jge	.L4
-	movq	-24(%rbp), %rax
-	addq	$1, %rax
-	leaq	0(,%rax,8), %rdx
-	movq	-40(%rbp), %rax
-	addq	%rdx, %rax
-	movq	(%rax), %rax
-	movq	%rax, -8(%rbp)
-	movq	-24(%rbp), %rax
-	leaq	0(,%rax,8), %rdx
-	movq	-40(%rbp), %rax
-	addq	%rdx, %rax
-	movq	-24(%rbp), %rdx
-	addq	$1, %rdx
-	leaq	0(,%rdx,8), %rcx
-	movq	-40(%rbp), %rdx
-	addq	%rcx, %rdx
-	movq	(%rax), %rax
-	movq	%rax, (%rdx)
-	movq	-24(%rbp), %rax
-	leaq	0(,%rax,8), %rdx
-	movq	-40(%rbp), %rax
-	addq	%rax, %rdx
-	movq	-8(%rbp), %rax
-	movq	%rax, (%rdx)
-.L4:
-	addq	$1, -24(%rbp)
 .L3:
-	movq	-24(%rbp), %rax
-	cmpq	-16(%rbp), %rax
-	jl	.L5
-	subq	$1, -16(%rbp)
+	addq	$1, %rax
+.L5:
+	cmpq	%rsi, %rax
+	jge	.L7
+	leaq	8(%rdi,%rax,8), %r8
+	movq	(%r8), %rcx
+	leaq	(%rdi,%rax,8), %rdx
+	movq	(%rdx), %r9
+	cmpq	%r9, %rcx
+	jge	.L3
+	movq	%r9, (%r8)
+	movq	%rcx, (%rdx)
+	jmp	.L3
+.L7:
+	subq	$1, %rsi
 .L2:
-	cmpq	$0, -16(%rbp)
-	jg	.L6
-	nop
-	popq	%rbp
-	.cfi_def_cfa 7, 8
-	ret
+	testq	%rsi, %rsi
+	jle	.L8
+	movl	$0, %eax
+	jmp	.L5
+.L8:
+	rep ret
 	.cfi_endproc
-.LFE0:
+.LFE23:
 	.size	bubble_a, .-bubble_a
-	.section	.rodata
+	.section	.rodata.str1.1,"aMS",@progbits,1
 .LC0:
 	.string	"Unsorted array:\t"
 .LC1:
@@ -83,58 +42,58 @@ bubble_a:
 	.globl	main
 	.type	main, @function
 main:
-.LFB1:
+.LFB24:
 	.cfi_startproc
-	pushq	%rbp
+	pushq	%rbx
 	.cfi_def_cfa_offset 16
-	.cfi_offset 6, -16
-	movq	%rsp, %rbp
-	.cfi_def_cfa_register 6
-	subq	$112, %rsp
-	movl	%edi, -100(%rbp)
-	movq	%rsi, -112(%rbp)
+	.cfi_offset 3, -16
+	subq	$96, %rsp
+	.cfi_def_cfa_offset 112
 	movq	%fs:40, %rax
-	movq	%rax, -8(%rbp)
+	movq	%rax, 88(%rsp)
 	xorl	%eax, %eax
-	movq	$0, -96(%rbp)
-	movq	$1, -88(%rbp)
-	movq	$4, -80(%rbp)
-	movq	$2, -72(%rbp)
-	movq	$5, -64(%rbp)
-	movq	$9, -56(%rbp)
-	movq	$8, -48(%rbp)
-	movq	$3, -40(%rbp)
-	movq	$7, -32(%rbp)
-	movq	$6, -24(%rbp)
-	leaq	.LC0(%rip), %rdi
-	movl	$0, %eax
-	call	printf@PLT
-	leaq	-96(%rbp), %rax
+	movq	$0, (%rsp)
+	movq	$1, 8(%rsp)
+	movq	$4, 16(%rsp)
+	movq	$2, 24(%rsp)
+	movq	$5, 32(%rsp)
+	movq	$9, 40(%rsp)
+	movq	$8, 48(%rsp)
+	movq	$3, 56(%rsp)
+	movq	$7, 64(%rsp)
+	movq	$6, 72(%rsp)
+	leaq	.LC0(%rip), %rsi
+	movl	$1, %edi
+	call	__printf_chk@PLT
+	movq	%rsp, %rbx
 	movl	$10, %esi
-	movq	%rax, %rdi
+	movq	%rbx, %rdi
 	call	print_array@PLT
-	leaq	-96(%rbp), %rax
 	movl	$10, %esi
-	movq	%rax, %rdi
+	movq	%rbx, %rdi
 	call	bubble_a
-	leaq	.LC1(%rip), %rdi
+	leaq	.LC1(%rip), %rsi
+	movl	$1, %edi
 	movl	$0, %eax
-	call	printf@PLT
-	leaq	-96(%rbp), %rax
+	call	__printf_chk@PLT
 	movl	$10, %esi
-	movq	%rax, %rdi
+	movq	%rbx, %rdi
 	call	print_array@PLT
-	movl	$0, %eax
-	movq	-8(%rbp), %rdx
+	movq	88(%rsp), %rdx
 	xorq	%fs:40, %rdx
-	je	.L9
-	call	__stack_chk_fail@PLT
-.L9:
-	leave
-	.cfi_def_cfa 7, 8
+	jne	.L12
+	movl	$0, %eax
+	addq	$96, %rsp
+	.cfi_remember_state
+	.cfi_def_cfa_offset 16
+	popq	%rbx
+	.cfi_def_cfa_offset 8
 	ret
+.L12:
+	.cfi_restore_state
+	call	__stack_chk_fail@PLT
 	.cfi_endproc
-.LFE1:
+.LFE24:
 	.size	main, .-main
 	.ident	"GCC: (Ubuntu 7.4.0-1ubuntu1~18.04.1) 7.4.0"
 	.section	.note.GNU-stack,"",@progbits

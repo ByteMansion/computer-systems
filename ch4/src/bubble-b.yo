@@ -1,0 +1,61 @@
+                            | # Execution begins at address 0
+0x000:                      |     .pos 0
+0x000: 30f40002000000000000 |     irmovq stack, %rsp  # Set up stack pointer
+0x00a: 803800000000000000   |     call   main         # Execute main program
+0x013: 00                   |     halt                # Terminate program
+                            | 
+                            | # Array of 4 elements
+0x018:                      |     .align 8
+0x018:                      | array:
+0x018: 0400000000000000     |     .quad 0x0000000000000004
+0x020: 0300000000000000     |     .quad 0x0000000000000003
+0x028: 0200000000000000     |     .quad 0x0000000000000002
+0x030: 0100000000000000     |     .quad 0x0000000000000001
+                            | 
+0x038:                      | main:
+0x038: 30f71800000000000000 |     irmovq array, %rdi
+0x042: 30f62000000000000000 |     irmovq $32, %rsi
+0x04c: 805600000000000000   |     call   bubble_b
+0x055: 90                   |     ret
+                            | 
+                            | # long bubble_b(long *array, long count)
+                            | # array in %rdi, count in %rsi
+0x056:                      | bubble_b:
+0x056: 6076                 |     addq   %rdi, %rsi
+0x058: 30f80800000000000000 |     irmovq $8, %r8
+0x062: 6186                 |     subq   %r8, %rsi
+0x064: 70d200000000000000   |     jmp    L2
+                            | 
+0x06d:                      | L4:
+0x06d: 50900800000000000000 |     mrmovq 8(%rax), %r9   # *(array+i)
+0x077: 50a00000000000000000 |     mrmovq (%rax), %r10   # *(array)
+0x081: 2098                 |     rrmovq %r9, %r8
+0x083: 61a8                 |     subq   %r10, %r8
+0x085: 75a200000000000000   |     jge    L3
+0x08e: 40a00800000000000000 |     rmmovq %r10, 8(%rax)  # swap two elements
+0x098: 40900000000000000000 |     rmmovq %r9, (%rax)
+                            | 
+0x0a2:                      | L3:
+0x0a2: 30f80800000000000000 |     irmovq $8, %r8
+0x0ac: 6080                 |     addq   %r8, %rax
+0x0ae: 70b900000000000000   |     jmp    L5
+                            | 
+0x0b7:                      | L6:
+0x0b7: 2070                 |     rrmovq %rdi, %rax
+                            | 
+0x0b9:                      | L5: # inner loop
+0x0b9: 2068                 |     rrmovq %rsi, %r8
+0x0bb: 6108                 |     subq   %rax, %r8
+0x0bd: 766d00000000000000   |     jg     L4
+0x0c6: 30f80800000000000000 |     irmovq $8, %r8
+0x0d0: 6186                 |     subq   %r8, %rsi   # update pointer of external loop
+                            | 
+0x0d2:                      | L2: # external loop
+0x0d2: 2068                 |     rrmovq %rsi, %r8
+0x0d4: 6178                 |     subq   %rdi, %r8   # compare start and last of array
+0x0d6: 76b700000000000000   |     jg     L6
+0x0df: 90                   |     ret
+                            | 
+                            | # Stack starts here and grows to lower address
+0x200:                      |     .pos   0x200
+0x200:                      | stack:

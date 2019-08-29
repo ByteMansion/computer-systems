@@ -61,3 +61,11 @@ Bubblesort using array referencing: [bubble-a.c](./src/bubble-a.c)
 Bubblesort using pointer referencing: [bubble-b.c](./src/bubble-b.c)
 
 B.
+
+Use commands `gcc -Og -S bubble-b.c` and `gcc -Og -S bubble-a.c` to get an optimized assembly code files [bubble-b.s](./src/bubble-b.s) and [bubble-a.s](./src/bubble-a.s).
+
+Y86-64 program: 
+
+[bubble-b.ys](./src/bubble-b.ys)
+
+[bubble-b.yo](./src/bubble-b.yo)
