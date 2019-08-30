@@ -5,6 +5,7 @@
     halt
 
 # Array of 4 elements
+    .align 8
 array:
     .quad 0x0000000000000004
     .quad 0x0000000000000009
