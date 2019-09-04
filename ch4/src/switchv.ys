@@ -1,0 +1,66 @@
+# Execution begins at address 0
+    .pos 0
+    irmovq stack, %rsp
+    call   main
+    halt
+
+    .align 8
+array:
+    .quad 0x0000000000000000
+    .quad 0x0000000000000000
+    .quad 0x0000000000000000
+    .quad 0x0000000000000000
+    .quad 0x0000000000000000
+
+main:
+    # test number: -1, 0, 1, 5, 8
+    irmovq array, %r8
+
+    irmovq $-1, %rdi
+    call   switchv
+    rmmovq %rax, (%r8)
+
+    irmovq $0, %rdi
+    call   switchv
+    rmmovq %rax, 8(%r8)
+
+    irmovq $1, %rdi
+    call   switchv
+    rmmovq %rax, 16(%r8)
+
+    irmovq $5, %rdi
+    call   switchv
+    rmmovq %rax, 24(%r8)
+
+    irmovq $8, %rdi
+    call   switchv
+    rmmovq %rax, 32(%r8)
+    ret
+
+switchv:
+    irmovq $0, %r9
+    irmovq $2, %r10
+    irmovq $1, %r11
+    subq   %r9, %rdi
+    je     C0
+    subq   %r10, %rdi
+    je     C25
+    subq   %r11, %rdi
+    je     C3
+    subq   %r10, %rdi
+    je     C25
+    irmovq $3549, %rax
+    ret
+C0:
+    irmovq $2730, %rax
+    ret
+C25:
+    irmovq $3003, %rax
+    ret
+C3:
+    irmovq $3276, %rax
+    ret
+
+# Stack starts here and grows to lower address
+    .pos   0x200
+stack:

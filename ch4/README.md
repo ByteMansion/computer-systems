@@ -83,3 +83,16 @@ Using no jumps at most one conditional mov:
 [bubble-b-cond1.ys](./src/bubble-b-cond1.ys)
 
 [bubble-b-cond1.yo](./src/bubble-b-cond1.yo)
+
+### 4.50
+Example use of switch statement:
+
+[switchv.c](./src/switchv.c)
+
+[switchv.s](./src/switchv.s)
+
+Y86-64 code: 
+
+[switchv.ys](./src/switchv.ys)
+
+[switchv.yo](./src/switchv.yo)

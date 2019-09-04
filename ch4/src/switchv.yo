@@ -1,0 +1,66 @@
+                            | # Execution begins at address 0
+0x000:                      |     .pos 0
+0x000: 30f40002000000000000 |     irmovq stack, %rsp
+0x00a: 804000000000000000   |     call   main
+0x013: 00                   |     halt
+                            | 
+0x018:                      |     .align 8
+0x018:                      | array:
+0x018: 0000000000000000     |     .quad 0x0000000000000000
+0x020: 0000000000000000     |     .quad 0x0000000000000000
+0x028: 0000000000000000     |     .quad 0x0000000000000000
+0x030: 0000000000000000     |     .quad 0x0000000000000000
+0x038: 0000000000000000     |     .quad 0x0000000000000000
+                            | 
+0x040:                      | main:
+                            |     # test number: -1, 0, 1, 5, 8
+0x040: 30f81800000000000000 |     irmovq array, %r8
+                            | 
+0x04a: 30f7ffffffffffffffff |     irmovq $-1, %rdi
+0x054: 80dc00000000000000   |     call   switchv
+0x05d: 40080000000000000000 |     rmmovq %rax, (%r8)
+                            | 
+0x067: 30f70000000000000000 |     irmovq $0, %rdi
+0x071: 80dc00000000000000   |     call   switchv
+0x07a: 40080800000000000000 |     rmmovq %rax, 8(%r8)
+                            | 
+0x084: 30f70100000000000000 |     irmovq $1, %rdi
+0x08e: 80dc00000000000000   |     call   switchv
+0x097: 40081000000000000000 |     rmmovq %rax, 16(%r8)
+                            | 
+0x0a1: 30f70500000000000000 |     irmovq $5, %rdi
+0x0ab: 80dc00000000000000   |     call   switchv
+0x0b4: 40081800000000000000 |     rmmovq %rax, 24(%r8)
+                            | 
+0x0be: 30f70800000000000000 |     irmovq $8, %rdi
+0x0c8: 80dc00000000000000   |     call   switchv
+0x0d1: 40082000000000000000 |     rmmovq %rax, 32(%r8)
+0x0db: 90                   |     ret
+                            | 
+0x0dc:                      | switchv:
+0x0dc: 30f90000000000000000 |     irmovq $0, %r9
+0x0e6: 30fa0200000000000000 |     irmovq $2, %r10
+0x0f0: 30fb0100000000000000 |     irmovq $1, %r11
+0x0fa: 6197                 |     subq   %r9, %rdi
+0x0fc: 733101000000000000   |     je     C0
+0x105: 61a7                 |     subq   %r10, %rdi
+0x107: 733c01000000000000   |     je     C25
+0x110: 61b7                 |     subq   %r11, %rdi
+0x112: 734701000000000000   |     je     C3
+0x11b: 61a7                 |     subq   %r10, %rdi
+0x11d: 733c01000000000000   |     je     C25
+0x126: 30f0dd0d000000000000 |     irmovq $3549, %rax
+0x130: 90                   |     ret
+0x131:                      | C0:
+0x131: 30f0aa0a000000000000 |     irmovq $2730, %rax
+0x13b: 90                   |     ret
+0x13c:                      | C25:
+0x13c: 30f0bb0b000000000000 |     irmovq $3003, %rax
+0x146: 90                   |     ret
+0x147:                      | C3:
+0x147: 30f0cc0c000000000000 |     irmovq $3276, %rax
+0x151: 90                   |     ret
+                            | 
+                            | # Stack starts here and grows to lower address
+0x200:                      |     .pos   0x200
+0x200:                      | stack:
