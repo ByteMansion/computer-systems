@@ -93,6 +93,14 @@ Example use of switch statement:
 
 Y86-64 code: 
 
+Below file doesn't use jump table:
+
 [switchv.ys](./src/switchv.ys)
 
 [switchv.yo](./src/switchv.yo)
+
+Below file uses jump table:
+
+[switchv-table.ys](./src/switchv-table.ys)
+
+[switchv-table.yo](./src/switchv-table.yo)

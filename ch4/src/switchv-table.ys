@@ -1,0 +1,84 @@
+# Execution begins at address 0
+    .pos   0
+    irmovq stack, %rsp
+    call   main
+    halt
+
+    .align 8
+array:
+    .quad 0x0000000000000000
+    .quad 0x0000000000000000
+    .quad 0x0000000000000000
+    .quad 0x0000000000000000
+
+main:
+    irmovq array, %rsi
+
+    irmovq $-1, %rdi
+    call   switchv
+    rmmovq %rax, (%rsi)
+
+    irmovq $0, %rdi
+    call   switchv
+    rmmovq %rax, 8(%rsi)
+
+    irmovq $5, %rdi
+    call   switchv
+    rmmovq %rax, 16(%rsi)
+
+    irmovq $8, %rdi
+    call   switchv
+    rmmovq %rax, 24(%rsi)
+    ret
+
+table:
+    .quad CASE0
+    .quad CASE25
+    .quad CASE3
+
+switchv:
+    irmovq table, %rbx
+
+    irmovq $8, %r8
+    irmovq $0, %r10
+    irmovq $1, %r11
+    irmovq $2, %r12
+    irmovq $1, %rcx
+
+    subq   %r10, %rdi    # case 0
+    je     addr
+
+    irmovq $2, %rcx
+    subq   %r12, %rdi   # case 2
+    je     addr
+
+    irmovq $3, %rcx
+    subq   %r11, %rdi    # case 3
+    je     addr
+
+    irmovq $2, %rcx
+    subq   %r12, %rdi   # case 5
+    je     addr
+
+    irmovq $0xddd, %rax # default
+    ret
+addr:
+    mrmovq (%rbx), %rdi
+    addq   %r8, %rbx
+    subq   %r11, %rcx
+    jne    addr
+    pushq  %rdi
+    ret
+
+CASE0:
+    irmovq $0xaaa, %rax
+    ret
+CASE25:
+    irmovq $0xbbb, %rax
+    ret
+CASE3:
+    irmovq $0xccc, %rax
+    ret
+
+    .pos 0x200
+stack:

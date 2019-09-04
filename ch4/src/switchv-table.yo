@@ -1,0 +1,84 @@
+                            | # Execution begins at address 0
+0x000:                      |     .pos   0
+0x000: 30f40002000000000000 |     irmovq stack, %rsp
+0x00a: 803800000000000000   |     call   main
+0x013: 00                   |     halt
+                            | 
+0x018:                      |     .align 8
+0x018:                      | array:
+0x018: 0000000000000000     |     .quad 0x0000000000000000
+0x020: 0000000000000000     |     .quad 0x0000000000000000
+0x028: 0000000000000000     |     .quad 0x0000000000000000
+0x030: 0000000000000000     |     .quad 0x0000000000000000
+                            | 
+0x038:                      | main:
+0x038: 30f61800000000000000 |     irmovq array, %rsi
+                            | 
+0x042: 30f7ffffffffffffffff |     irmovq $-1, %rdi
+0x04c: 80cf00000000000000   |     call   switchv
+0x055: 40060000000000000000 |     rmmovq %rax, (%rsi)
+                            | 
+0x05f: 30f70000000000000000 |     irmovq $0, %rdi
+0x069: 80cf00000000000000   |     call   switchv
+0x072: 40060800000000000000 |     rmmovq %rax, 8(%rsi)
+                            | 
+0x07c: 30f70500000000000000 |     irmovq $5, %rdi
+0x086: 80cf00000000000000   |     call   switchv
+0x08f: 40061000000000000000 |     rmmovq %rax, 16(%rsi)
+                            | 
+0x099: 30f70800000000000000 |     irmovq $8, %rdi
+0x0a3: 80cf00000000000000   |     call   switchv
+0x0ac: 40061800000000000000 |     rmmovq %rax, 24(%rsi)
+0x0b6: 90                   |     ret
+                            | 
+0x0b7:                      | table:
+0x0b7: 7a01000000000000     |     .quad CASE0
+0x0bf: 8501000000000000     |     .quad CASE25
+0x0c7: 9001000000000000     |     .quad CASE3
+                            | 
+0x0cf:                      | switchv:
+0x0cf: 30f3b700000000000000 |     irmovq table, %rbx
+                            | 
+0x0d9: 30f80800000000000000 |     irmovq $8, %r8
+0x0e3: 30fa0000000000000000 |     irmovq $0, %r10
+0x0ed: 30fb0100000000000000 |     irmovq $1, %r11
+0x0f7: 30fc0200000000000000 |     irmovq $2, %r12
+0x101: 30f10100000000000000 |     irmovq $1, %rcx
+                            | 
+0x10b: 61a7                 |     subq   %r10, %rdi    # case 0
+0x10d: 736001000000000000   |     je     addr
+                            | 
+0x116: 30f10200000000000000 |     irmovq $2, %rcx
+0x120: 61c7                 |     subq   %r12, %rdi   # case 2
+0x122: 736001000000000000   |     je     addr
+                            | 
+0x12b: 30f10300000000000000 |     irmovq $3, %rcx
+0x135: 61b7                 |     subq   %r11, %rdi    # case 3
+0x137: 736001000000000000   |     je     addr
+                            | 
+0x140: 30f10200000000000000 |     irmovq $2, %rcx
+0x14a: 61c7                 |     subq   %r12, %rdi   # case 5
+0x14c: 736001000000000000   |     je     addr
+                            | 
+0x155: 30f0dd0d000000000000 |     irmovq $0xddd, %rax # default
+0x15f: 90                   |     ret
+0x160:                      | addr:
+0x160: 50730000000000000000 |     mrmovq (%rbx), %rdi
+0x16a: 6083                 |     addq   %r8, %rbx
+0x16c: 61b1                 |     subq   %r11, %rcx
+0x16e: 746001000000000000   |     jne    addr
+0x177: a07f                 |     pushq  %rdi
+0x179: 90                   |     ret
+                            | 
+0x17a:                      | CASE0:
+0x17a: 30f0aa0a000000000000 |     irmovq $0xaaa, %rax
+0x184: 90                   |     ret
+0x185:                      | CASE25:
+0x185: 30f0bb0b000000000000 |     irmovq $0xbbb, %rax
+0x18f: 90                   |     ret
+0x190:                      | CASE3:
+0x190: 30f0cc0c000000000000 |     irmovq $0xccc, %rax
+0x19a: 90                   |     ret
+                            | 
+0x200:                      |     .pos 0x200
+0x200:                      | stack:
