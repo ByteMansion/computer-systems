@@ -4,6 +4,8 @@ Y86-64 is a simulator used to compile AS program in this book. Source distributi
 
 I also provide the simulator source distribution and guide manual in sub-folder `sim`.
 
+**Notice**: Decompress tar package and then execute `make` command, "matherr" error may occur though you have already installed graphical tools. Just comment those 2 lines containing the function in files `seq/ssim.c` and `pipe/psim.c`.
+
 ## Solutions to Homework Problems
 
 ### 4.45
@@ -114,4 +116,12 @@ Below file uses jump table:
 |**Memory**||
 |**Write back**|$R[rB] \leftarrow valE$|
 |**PC update**|$PC \leftarrow valP$|
+
+### 4.52
+If we get right solution to previous problem, it is easy to get the answer.
+BTW, compared with x86-84, Y86-64 is extremely simple to read and learn.
+
+[seq-full.hcl](../sim/seq/seq-full.hcl)
+
+To check the correctness of `iaddq`, you have to change the `VERSION` from `std` to `full` in `seq/Makefile`.
 

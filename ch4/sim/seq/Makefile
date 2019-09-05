@@ -1,6 +1,9 @@
 # Modify this line to indicate the default version
-
-VERSION=std
+# seq-full.hcl and seq-std.hcl have same content.
+# If you complete the definition of iaddq, change the VERSION
+# to full.  Changrui 9/5/2019
+# VERSION=std
+VERSION=full
 
 # Comment this out if you don't have Tcl/Tk on your system
 
