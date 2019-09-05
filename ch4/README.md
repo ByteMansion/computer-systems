@@ -104,3 +104,14 @@ Below file uses jump table:
 [switchv-table.ys](./src/switchv-table.ys)
 
 [switchv-table.yo](./src/switchv-table.yo)
+
+### 4.51
+|*Stage*|*iaddq*|
+|-|-|
+|**Fetch**|$icode:ifun \leftarrow M_{1}[PC], rA:rB \leftarrow M_{1}[PC+1], valC=M_{8}[PC+2], valP=PC+10$|
+|**Decode**|$valB \leftarrow R[rB]$|
+|**Execute**|$valE \leftarrow valB + valC, Set \space CC$|
+|**Memory**||
+|**Write back**|$R[rB] \leftarrow valE$|
+|**PC update**|$PC \leftarrow valP$|
+
