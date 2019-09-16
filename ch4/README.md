@@ -123,5 +123,14 @@ BTW, compared with x86-84, Y86-64 is extremely simple to read and learn.
 
 [seq-full.hcl](../sim/seq/seq-full.hcl)
 
-To check the correctness of `iaddq`, you have to change the `VERSION` from `std` to `full` in `seq/Makefile`.
+To verify the correctness of `iaddq`, you have to change the `VERSION` from `std` to `full` in `seq/Makefile`.
+Re-compile and build source files, and then execute the file `asumi.yo` located in folder `y86-code`.
 
+### 4.53
+solution is coming...
+
+### 4.54
+[pipe-full.hcl](../sim/pipe/pipe-full.hcl)
+
+To verify the correctness of `iaddq`, you have to change the `VERSION` from `std` to `full` in `pipe/Makefile`.
+Re-compile and build source files, and then execute the file `asumi.yo` located in folder `y86-code`.
