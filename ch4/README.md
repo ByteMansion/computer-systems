@@ -140,3 +140,12 @@ Re-compile and build source files, and then execute the file `asumi.yo` located 
 
 ### 4.56
 [pipe-btfnt.hcl](./sim/pipe/pipe-btfnt.hcl)
+
+### 4.57
+solution is coming
+
+### 4.58
+solution is coming
+
+### 4.59
+solution is coming
