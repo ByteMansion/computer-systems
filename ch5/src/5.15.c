@@ -11,7 +11,7 @@
 void inner6(vec_ptr u, vec_ptr v, data_t *dest)
 {
     long i;
-    long length = get_vec_element(u);
+    long length = vec_length(u);
     data_t *udata = get_vec_start(u);
     data_t *vdata = get_vec_start(v);
     data_t sum0 = (data_t) 0;
@@ -33,6 +33,6 @@ void inner6(vec_ptr u, vec_ptr v, data_t *dest)
     for(; i < length; i++) {
         sum0 += udata[i] * vdata[i];
     }
-    
+
     *dest = sum0 + sum1 + sum2 + sum3 + sum4 + sum5;
 }
