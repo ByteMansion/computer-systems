@@ -2,6 +2,8 @@
 ## Solutions to Homework Problems
 
 ### 5.13
+[5.13.c](./src/5.13.c)
+
 A.
 
 ![5.13](./pic/5.13.jpg)
@@ -21,13 +23,17 @@ As we can see from above pic, there is only one `add` cell on key path.
 Therefore, the cycle of `mul` can not impact CPE.
 
 ### 5.14
+[5.14.c](./src/5.14.c)
+
 A.
 
 Using 6x1 loop unrolling, we cannot change the limiting factors.
-There are 6 double/long `add` cells on key path.
+There are 6 float/long `add` cells on key path.
 Therefore, the lower bound on CPE is still 1.0.
 
 B.
 
 Same as above answer.
 
+### 5.15
+[5.15.c](./src/5.15.c)
