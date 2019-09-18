@@ -9,6 +9,8 @@
    
 5. [Contents](#Contents)
 
+6. [References](#references)
+
 
 ## Why this repo?
 - List solutions to Homework Problems of the classic cs book - Computer Systems: a programmer's perspective $ 3^{rd}$.
@@ -45,9 +47,13 @@ Enter `bin` folder and find all executables. If you want to execute a certain ex
 
 [Chpater3 Machine-Level Representation of Programs](./ch3/)
 
-[Chaoter4 Processor Architecture](./ch4/)
+[Chapter4 Processor Architecture](./ch4/)
+
+[Chapter5 Optimize Program Performance](./ch5/)
 
 ## Materials
 1. Official website of this book: https://csapp.cs.cmu.edu
 2. Student site for this book: http://csapp.cs.cmu.edu/3e/students.html
 
+## References
+1. https://dreamanddead.gitbooks.io/csapp-3e-solutions/
