@@ -9,13 +9,25 @@ A.
 B.
 
 Just as displayed in above picture, the key path is `add` cell. 
-According to Figure 5.12, the lower bound on the CPE is 3.
+According to Figure 5.12, the lower bound on the CPE is 3.0.
 
 C.
 
-Same as above analysis, the lower bound on the CPE is 1.
+Same as above analysis, the lower bound on the CPE is 1.0.
 
 D.
 
 As we can see from above pic, there is only one `add` cell on key path.
 Therefore, the cycle of `mul` can not impact CPE.
+
+### 5.14
+A.
+
+Using 6x1 loop unrolling, we cannot change the limiting factors.
+There are 6 double/long `add` cells on key path.
+Therefore, the lower bound on CPE is still 1.0.
+
+B.
+
+Same as above answer.
+
