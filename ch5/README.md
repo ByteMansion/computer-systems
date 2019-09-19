@@ -46,3 +46,13 @@ The following factors may limit the performance to a CPE 1.0:
 
 ### 5.17
 [5.17.c](./src/5.17.c)
+
+### 5.18
+Polynomial evaluation in [Practice Problem 5.5](./src/5.5.c) and [Hornor's Method 5.6](./src/5.6.c).
+
+**5.5**
+> The performance-limiting computation here is the repeated computation of the expression `xpwr *= x`. This required a floating-point multiplication (5 clock cycles), and the computation for one iteration cannot begin until the one for the previous iteration has completed. The updating of result only requires a floating-point addition(3 clock cycles) between successive iterations.
+
+**5.6**
+> The performance-limiting computation here is the repeated computation of the expression `result = a[i] + x * result`. Starting from the value of `result` from the previous iteration, we must first multiply it by x (5 clock cycles) and then add it to `a[i]` (3 clock cycles) before we have the value for this iteration. Thus, each iteration imposes a minimum latency of 8 cycles, exactly our measured CPE.
+
