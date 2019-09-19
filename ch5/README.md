@@ -37,3 +37,9 @@ Same as above answer.
 
 ### 5.15
 [5.15.c](./src/5.15.c)
+
+The following factors may limit the performance to a CPE 1.0:
+1. the number of registers is limited; the performance cannot improve when reaching maximum utilization of registers.(Register Spilling)
+
+### 5.16
+[5.16.c](./src/5.16.c)
