@@ -59,3 +59,6 @@ Polynomial evaluation in [Practice Problem 5.5](./src/5.5.c) and [Hornor's Metho
 The solution to this problem can be found in [5.18](./src/5.18.c)
 
 I also provide a [test](./src/poly.c) to verify the validity of this solution, and give a comparison between the results of different evaluation ways.
+
+### 5.19
+I provide a [psum](./src/psum.c) source code and a revised version in [5.12](./src/5.12.c).
