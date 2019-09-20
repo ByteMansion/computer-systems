@@ -61,4 +61,5 @@ The solution to this problem can be found in [5.18](./src/5.18.c)
 I also provide a [test](./src/poly.c) to verify the validity of this solution, and give a comparison between the results of different evaluation ways.
 
 ### 5.19
-I provide a [psum](./src/psum.c) source code and a revised version in [5.12](./src/5.12.c).
+I provide a [psum](./src/psum.c) source code and a revised version in the same file.
+The solution to the problem is also in the [file](./src/psum.c)
