@@ -56,3 +56,6 @@ Polynomial evaluation in [Practice Problem 5.5](./src/5.5.c) and [Hornor's Metho
 **5.6**
 > The performance-limiting computation here is the repeated computation of the expression `result = a[i] + x * result`. Starting from the value of `result` from the previous iteration, we must first multiply it by x (5 clock cycles) and then add it to `a[i]` (3 clock cycles) before we have the value for this iteration. Thus, each iteration imposes a minimum latency of 8 cycles, exactly our measured CPE.
 
+The solution to this problem can be found in [5.18](./src/5.18.c)
+
+I also provide a [test](./src/poly.c) to verify the validity of this solution, and give a comparison between the results of different evaluation ways.
