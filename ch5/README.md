@@ -63,3 +63,4 @@ I also provide a [test](./src/poly.c) to verify the validity of this solution, a
 ### 5.19
 I provide a [psum](./src/psum.c) source code and a revised version in the same file.
 The solution to the problem is also in the [file](./src/psum.c)
+A basic test function can be found in [psum_test](./src/psum_test.c)
