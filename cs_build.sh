@@ -70,5 +70,6 @@ if ( test $? -eq 0 ); then
     cp ../build/ch3/src/cs-* ./
     cp ../build/ch4/src/cs-* ./
     cp ../build/ch5/src/cs-* ./
+    cp ../build/ch6/src/cs-* ./
 fi
 

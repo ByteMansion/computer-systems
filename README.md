@@ -51,6 +51,20 @@ Enter `bin` folder and find all executables. If you want to execute a certain ex
 
 [Chapter5 Optimize Program Performance](./ch5/)
 
+[Chapter6 The Memory Hierachy](./ch6/)
+
+Chapter7 Linking
+
+Chapter8 Exceptional Control Flow
+
+Chapter9 Virtual Memory
+
+Chapter10 System-Level IO
+
+Chapter11 Network Programming
+
+Chapter12 Concurrent Programming
+
 ## Materials
 1. Official website of this book: https://csapp.cs.cmu.edu
 2. Student site for this book: http://csapp.cs.cmu.edu/3e/students.html
