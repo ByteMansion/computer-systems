@@ -47,4 +47,79 @@ $$
 T_{random\_case} = C_{sector} \times [T_{avg\_seek} + T_{avg\_rotation} + T_{avg\_transfer}] = 24s
 $$
 
+### 6.25
+|Cache|m|C|B|E|S|t|s|b|
+|-    |-|-|-|-|-|-|-|-|
+|1.   |32|1024|4|4|64|24|6|2|
+|2.   |32|1024|4|256|1|30|0|2|
+|3.   |32|1024|8|1|128|22|7|3|
+|4.   |32|1024|8|128|1|29|0|3|
+|5.   |32|1024|32|1|32|22|5|5|
+|6.   |32|1024|32|4|8|24|3|5|
 
+### 6.26
+|Cache|m|C|B|E|S|t|s|b|
+|-    |-|-|-|-|-|-|-|-|
+|1.   |32|2048|8|1|256|21|8|3|
+|2.   |32|2048|4|4|128|23|7|2|
+|3.   |32|1024|2|8|64|25|6|1|
+|4.   |32|1024|32|2|16|23|4|5|
+
+### 6.27 6.28
+Omit.
+
+### 6.29
+A.
+
+|CT|CT|CT|CT|CT|CT|CT|CT|CI|CI|CO|CO|
+|-|-|-|-|-|-|-|-|-|-|-|-|
+
+B.
+
+|Operation|Address|Hit?|Read value(or Unknown)|
+|-|-|-|-|
+|Read|0x834|No|-|
+|Write|0x836|Yes|Unknown|
+|Read|0xFFD|Yes|0xC0|
+
+### 6.30
+A.
+$$
+C = E \times B \times S = 128
+$$
+
+B.
+|CT|CT|CT|CT|CT|CT|CT|CT|CI|CI|CI|CO|CO|
+|-|-|-|-|-|-|-|-|-|-|-|-|-|
+
+### 6.31
+A.
+
+|0|0|1|1|1|0|0|0|1|1|0|1|0|
+|-|-|-|-|-|-|-|-|-|-|-|-|-|
+
+B.
+
+|Parameter|Value|
+|-|-|
+|Block offset(CO)|0x02|
+|Index(CI)|0x06|
+|Cache tage(CT)|0x38|
+|Cache hit?(Y/N)|Y|
+|Cache byte returned|0xEB|
+
+### 6.32
+A.
+
+|1|0|1|1|0|1|1|1|0|1|0|0|0|
+|-|-|-|-|-|-|-|-|-|-|-|-|-|
+
+B.
+
+|Parameter|Value|
+|-|-|
+|Block offset(CO)|0x0|
+|Index(CI)|0x02|
+|Cache tage(CT)|0xB7|
+|Cache hit?(Y/N)|N|
+|Cache byte returned|-|
