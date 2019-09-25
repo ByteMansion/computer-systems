@@ -123,3 +123,8 @@ B.
 |Cache tage(CT)|0xB7|
 |Cache hit?(Y/N)|N|
 |Cache byte returned|-|
+
+### 6.33
+|0x1788|0x1789|0x178A|0x178B|0x1C88|0x1C89|0x1C8A|0x1C8B|
+|-|-|-|-|-|-|-|-|
+
