@@ -128,3 +128,21 @@ B.
 |0x1788|0x1789|0x178A|0x178B|0x1C88|0x1C89|0x1C8A|0x1C8B|
 |-|-|-|-|-|-|-|-|
 
+### 6.34
+Notice: elements with same row index will load into same cache set.
+
+**dst array**
+||Col.0|Col.1|Col.2|Col.3|
+|-|-|-|-|-|
+|Row0|m|m|h|m|
+|Row1|m|h|m|h|
+|Row2|m|m|h|m|
+|Row3|m|h|m|h|
+
+**src array**
+||Col.0|Col.1|Col.2|Col.3|
+|-|-|-|-|-|
+|Row0|m|m|m|m|
+|Row1|m|m|m|m|
+|Row2|m|m|m|m|
+|Row3|m|m|m|m|
