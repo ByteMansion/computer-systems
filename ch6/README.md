@@ -200,7 +200,47 @@ E.
 Yes.
 Larger block can reduce the miss rate because we only miss the element of first block when loading data from lower memory each time.
 
+### 6.37
+Miss rate table:
 
+|Function|N = 64|N = 60|
+|-|-|-|
+|sumA|25%|25%|
+|sumB|25%|25%|
+|sumC|25%|25%|
 
+### 6.38
+A. 
+
+16 * 16 * 4 = 1024
+
+B.
+
+128
+
+C.
+
+12.5%
+
+### 6.39
+A.
+
+16 * 16 * 4 = 1024
+
+B.
+
+256
+
+C.
+
+25%
+
+### 6.40
+### 6.41
+### 6.42
+### 6.43
+### 6.44
+### 6.45
+### 6.46
 
 
