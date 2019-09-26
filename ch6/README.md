@@ -147,7 +147,7 @@ Notice: elements with same row index will load into same cache set.
 |Row2|m|m|m|m|
 |Row3|m|m|m|m|
 
-### 6.34
+### 6.35
 The cache with total size of 128 bytes.
 The block with size of 16 bytes.
 Therefore, we have 8 sets of bytes, and each row of source and destination arrays can be located in an unique block.
@@ -169,4 +169,38 @@ Therefore, we have 8 sets of bytes, and each row of source and destination array
 |Row3|m|h|h|h|
 
 Extension: If the cache size is 64 bytes, what the arrays will be?
+
+### 6.36
+```c
+int x[2][128];
+int i;
+for (i = 0; i < 128; i++) {
+    sum += x[0][i] * x[1][i];
+}
+```
+A. Case 1
+
+Cache size is 512 B. The miss rate is 100%.
+
+B. Case 2
+
+Cache size is 1024 B. The miss rate is 25%.
+
+C. Case 3
+
+Cache size is 512 B, but use LRU replacement policy. The miss rate is 25%.
+
+D.
+
+No.
+Larger cache can not reduce the miss rate because no matter how large the cache is, the first element of each block will miss.
+
+E.
+
+Yes.
+Larger block can reduce the miss rate because we only miss the element of first block when loading data from lower memory each time.
+
+
+
+
 
