@@ -146,3 +146,27 @@ Notice: elements with same row index will load into same cache set.
 |Row1|m|m|m|m|
 |Row2|m|m|m|m|
 |Row3|m|m|m|m|
+
+### 6.34
+The cache with total size of 128 bytes.
+The block with size of 16 bytes.
+Therefore, we have 8 sets of bytes, and each row of source and destination arrays can be located in an unique block.
+
+**dst array**
+||Col.0|Col.1|Col.2|Col.3|
+|-|-|-|-|-|
+|Row0|m|h|h|h|
+|Row1|m|h|h|h|
+|Row2|m|h|h|h|
+|Row3|m|h|h|h|
+
+**src array**
+||Col.0|Col.1|Col.2|Col.3|
+|-|-|-|-|-|
+|Row0|m|h|h|h|
+|Row1|m|h|h|h|
+|Row2|m|h|h|h|
+|Row3|m|h|h|h|
+
+Extension: If the cache size is 64 bytes, what the arrays will be?
+
