@@ -290,7 +290,44 @@ L3 cache region: 512K-8M
 Main memory region: 8M - 128M
 
 ### 6.45
+(reference link: https://github.com/DreamAndDead/CSAPP-3e-Solutions/blob/master/chapter6/6.45.md)
 
+Assume matrix size N is 4, cache block size B is 8 bytes, and the size of integer is 4 bytes.
+
+For a matrix with size 4*4, it is easy to get the hit rate is 50% if we traverse elements one by one, just like the solution this problem gives.
+```c
+void transpose(int *dst, int *src, int dim)
+{
+    int i, j;
+
+    for(i = 0; i < dim; i++)
+        for(j = 0; j < dim; j++)
+            dst[j * dim + i] = src[i * dim + j];
+}
+``` 
+
+If the cache block B is larger, the hit rate must be higher because only the first element misses in each round. Therefore, hit rate is in direct proportion to the cache block size.
+
+From chapter 5, we all know that parallism can optimize program performance.
+If we split matrix by size 2*2 block, transpose matrix in following code:
+```c
+void transpose(int *dst, int *src, int dim)
+{
+    int i, j;
+
+    for(i = 0; i < dim - 2; i += 2) {
+        for(j = 0; j < dim - 2; j += 2) {
+            dst[j*dim+i] = src[i*dim+j];
+            dst[j*dim+i+1] = src[(i+1)*dim+j];
+            dst[(j+1)*dim+i] = src[i*dim+j+1];
+            dst[(j+1)*dim+j+1] = src[(i+1)*dim+j+1];
+        }
+    }
+}
+```
+Above all, transpose a matrix can be optimized by the cache size and parallism.
+
+[transpose.c](./src/transpose.c)
 
 ### 6.46
 

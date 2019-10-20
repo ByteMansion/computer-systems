@@ -1,0 +1,1 @@
+add_solution(cs-transpose   transpose.c)
