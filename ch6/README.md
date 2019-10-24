@@ -324,11 +324,28 @@ void transpose(int *dst, int *src, int dim)
         }
     }
 }
-```
+``` 
 Above all, transpose a matrix can be optimized by the cache size and parallism.
 
 [transpose.c](./src/transpose.c)
 
 ### 6.46
+This problem is similar to above problem except this one is symmetric.
 
+The simple loop version:
+```C
+void col_convert(int *G, int dim)
+{
+    int i, j;
+
+    for (i = 0; i < dim; i++) {
+        for (j = 0; j < dim; j++) {
+            G[j*dim + i] = G[j*dim + i] || G[i*dim + j];
+        }
+    }
+}
+```
+Another thing is how to optimize the logical statement in the loop.
+
+[col-convert.c](./src/col-convert.c)
 
